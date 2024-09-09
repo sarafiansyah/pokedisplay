@@ -32,7 +32,7 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import LibraryAddCheckIcon from "@mui/icons-material/LibraryAddCheck";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 
-const pages = ["Pokemons", "Generations", "Items", "About"];
+const pages = ["Pokemons", "Generations", "Items", "About", "Users"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -211,7 +211,7 @@ function ResponsiveAppBar() {
 
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}>
-            <Box marginTop={1}>
+            <Box sx={{ marginTop: isLoggedIn ? 1 : 0 }}>
               {pages.map((page) => (
                 <Link key={page} href={`/${page.toLowerCase()}`} passHref>
                   <Button

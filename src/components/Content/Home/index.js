@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Paper, Typography, Box, Container, Grid } from "@mui/material";
+import { Chip, Paper, Typography, Box, Container, Grid } from "@mui/material";
 import Image from "next/image";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -22,6 +22,10 @@ import { motion } from "framer-motion";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 
 // Import Swiper styles
 import "swiper/css";
@@ -168,7 +172,7 @@ function ResponsiveCarousel() {
             style={{ width: "100%", overflow: "hidden" }} // Set width to 100% and hide overflow
           >
             <Image
-              src="/images/bg/wallBg06.jpg"
+              src="/images/bg/wallBg02.jpg"
               alt="Description of your image"
               layout="fill" // Fill the entire box
               objectFit="cover" // Use 'cover' to ensure the image covers the entire box
@@ -243,7 +247,7 @@ function ResponsiveCarousel() {
             style={{ width: "100%", overflow: "hidden" }} // Set width to 100% and hide overflow
           >
             <Image
-              src="/images/bg/wallBg02.jpg"
+              src="/images/bg/wallBg06.jpg"
               alt="Description of your image"
               layout="fill" // Fill the entire box
               objectFit="cover" // Use 'cover' to ensure the image covers the entire box
@@ -508,79 +512,107 @@ function ResponsiveCarousel() {
                 data-aos-duration="500"
                 style={{ paddingBottom: "50px" }}
               >
-                <Card sx={{ maxWidth: 280, height: 385 }}>
-                  <Box paddingY={2} paddingX={1}>
-                    <CardActionArea>
-                      <Box
-                        justifyContent="center"
-                        alignItems="center"
-                        textAlign="center"
-                        sx={{ justifyContent: "center" }}
-                      >
-                        <Box
-                          component="img"
-                          sx={{
-                            width: {
-                              xs: 180,
-                              sm: 180,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            height: {
-                              xs: 160,
-                              sm: 160,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          src="/images/products/kohyoung/aoi/AOI_Zenith_Product-Image-285x300.png"
-                          alt="Description of your image"
-                          width={275}
-                          height={300}
-                          objectFit="cover"
-                          objectPosition="center"
-                        />
-                      </Box>
+                <Card
+                  sx={{
+                    maxWidth: 280,
+                    height: 360,
+                    position: "relative",
+                    background:
+                      "linear-gradient(45deg, #A85EA2 30%, #6B2492 90%)",
+                  }}
+                >
+                  <Box
+                    paddingY={2}
+                    paddingX={0}
+                    sx={{ position: "relative", height: "100%" }}
+                  >
+                    <Box
+                      component="img"
+                      sx={{
+                        ml: -40,
+                        mt: -3,
+                        width: {
+                          xs: 800,
+                          sm: 800,
+                          md: 800,
+                          lg: 800,
+                          xl: 800,
+                        },
+                        height: {
+                          xs: 600,
+                          sm: 600,
+                          md: 600,
+                          lg: 600,
+                          xl: 600,
+                        },
+                        objectFit: "contain",
+                        objectPosition: "center",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1,
+                      }}
+                      src="/images/figures/fig04.png"
+                      alt="Description of your image"
+                      width={275}
+                      height={300}
+                    />
 
-                      <CardContent>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        mt: 30,
+                        paddingX: 0,
+                        textAlign: "left",
+                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                        width: "500px",
+                        justifyContent: "center",
+                        justifyItems: "center",
+                      }}
+                    >
+                      <Box px={1} pt={0.5} pb={2}>
                         <Typography
                           variant="body2"
                           fontSize="14px"
-                          color="text.secondary"
+                          color="white"
                         >
-                          Kohyoung
+                          Legendary
                         </Typography>
                         <Typography
                           fontWeight="bold"
                           gutterBottom
+                          color="white"
+                          sx={{
+                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                          }}
                           marginTop={0}
                           fontSize="26px"
                           variant="h5"
                           component="div"
                         >
-                          Zenith
+                          Mewtwo
                         </Typography>
-                        <Typography
-                          variant="body2"
-                          marginTop={-1}
-                          color="text.secondary"
-                        >
-                          Automated optical inspection (AOI)
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <Box paddingLeft={2} marginTop={-1} paddingBottom={3}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleButtonClick}
-                      >
-                        Find Out More
-                      </Button>
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "white",
+                            backgroundColor: "#d66ab0",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <SensorOccupiedIcon
+                              style={{
+                                color: "white",
+                              }}
+                            />
+                          }
+                          label="Psychic"
+                        />
+                      </Box>
                     </Box>
                   </Box>
                 </Card>
@@ -592,79 +624,124 @@ function ResponsiveCarousel() {
                 data-aos-duration="500"
                 style={{ paddingBottom: "50px" }}
               >
-                <Card sx={{ maxWidth: 280, height: 385 }}>
-                  <Box paddingY={2} paddingX={1}>
-                    <CardActionArea>
-                      <Box
-                        justifyContent="center"
-                        alignItems="center"
-                        textAlign="center"
-                        sx={{ justifyContent: "center" }}
-                      >
-                        <Box
-                          component="img"
-                          sx={{
-                            width: {
-                              xs: 180,
-                              sm: 180,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            height: {
-                              xs: 160,
-                              sm: 160,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          src="/images/products/pti/PTI-500X_First-Article-Inspection.png"
-                          alt="Description of your image"
-                          width={275}
-                          height={300}
-                          objectFit="cover"
-                          objectPosition="center"
-                        />
-                      </Box>
+                <Card
+                  sx={{
+                    maxWidth: 280,
+                    height: 360,
+                    position: "relative",
+                    background:
+                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
+                  }}
+                >
+                  <Box
+                    paddingY={2}
+                    paddingX={0}
+                    sx={{ position: "relative", height: "100%" }}
+                  >
+                    <Box
+                      component="img"
+                      sx={{
+                        ml: -17,
+                        mt: -5,
+                        width: {
+                          xs: 800,
+                          sm: 800,
+                          md: 750,
+                          lg: 800,
+                          xl: 800,
+                        },
+                        height: {
+                          xs: 600,
+                          sm: 600,
+                          md: 600,
+                          lg: 600,
+                          xl: 600,
+                        },
+                        objectFit: "contain",
+                        objectPosition: "center",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1,
+                      }}
+                      src="/images/figures/fig05.png"
+                      alt="Description of your image"
+                      width={275}
+                      height={300}
+                    />
 
-                      <CardContent>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        mt: 30,
+                        paddingX: 0,
+                        textAlign: "left",
+                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                        width: "500px",
+                        justifyContent: "center",
+                        justifyItems: "center",
+                      }}
+                    >
+                      <Box px={1} pt={0.5} pb={2}>
                         <Typography
                           variant="body2"
                           fontSize="14px"
-                          color="text.secondary"
+                          color="white"
                         >
-                          PTI
+                          Legendary
                         </Typography>
                         <Typography
                           fontWeight="bold"
                           gutterBottom
+                          color="white"
+                          sx={{
+                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                          }}
                           marginTop={0}
                           fontSize="26px"
                           variant="h5"
                           component="div"
                         >
-                          PTI-500X
+                          Articuno 5
                         </Typography>
-                        <Typography
-                          variant="body2"
-                          marginTop={-1}
-                          color="text.secondary"
-                        >
-                          First Article Inspection (FAI)
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <Box paddingLeft={2} marginTop={-1} paddingBottom={3}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleButtonClick}
-                      >
-                        Find Out More
-                      </Button>
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#7ed8f2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <AcUnitIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Ice"
+                        />
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#aab8c2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <FlightTakeoffIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Flying"
+                        />
+                      </Box>
                     </Box>
                   </Box>
                 </Card>
@@ -672,79 +749,124 @@ function ResponsiveCarousel() {
             </SwiperSlide>
             <SwiperSlide>
               <div data-aos="zoom-in" data-aos-duration="500">
-                <Card sx={{ maxWidth: 280, height: 385 }}>
-                  <Box paddingY={2} paddingX={1}>
-                    <CardActionArea>
-                      <Box
-                        justifyContent="center"
-                        alignItems="center"
-                        textAlign="center"
-                        sx={{ justifyContent: "center" }}
-                      >
-                        <Box
-                          component="img"
-                          sx={{
-                            width: {
-                              xs: 180,
-                              sm: 180,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            height: {
-                              xs: 160,
-                              sm: 160,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          src="/images/products/sinhovo/sinhovo-sh8650l.png"
-                          alt="Description of your image"
-                          width={275}
-                          height={300}
-                          objectFit="cover"
-                          objectPosition="center"
-                        />
-                      </Box>
+                <Card
+                  sx={{
+                    maxWidth: 280,
+                    height: 360,
+                    position: "relative",
+                    background:
+                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
+                  }}
+                >
+                  <Box
+                    paddingY={2}
+                    paddingX={0}
+                    sx={{ position: "relative", height: "100%" }}
+                  >
+                    <Box
+                      component="img"
+                      sx={{
+                        ml: -17,
+                        mt: -5,
+                        width: {
+                          xs: 800,
+                          sm: 800,
+                          md: 750,
+                          lg: 800,
+                          xl: 800,
+                        },
+                        height: {
+                          xs: 600,
+                          sm: 600,
+                          md: 600,
+                          lg: 600,
+                          xl: 600,
+                        },
+                        objectFit: "contain",
+                        objectPosition: "center",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1,
+                      }}
+                      src="/images/figures/fig05.png"
+                      alt="Description of your image"
+                      width={275}
+                      height={300}
+                    />
 
-                      <CardContent>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        mt: 30,
+                        paddingX: 0,
+                        textAlign: "left",
+                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                        width: "500px",
+                        justifyContent: "center",
+                        justifyItems: "center",
+                      }}
+                    >
+                      <Box px={1} pt={0.5} pb={2}>
                         <Typography
                           variant="body2"
                           fontSize="14px"
-                          color="text.secondary"
+                          color="white"
                         >
-                          Sinhovo
+                          Legendary
                         </Typography>
                         <Typography
                           fontWeight="bold"
                           gutterBottom
+                          color="white"
+                          sx={{
+                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                          }}
                           marginTop={0}
                           fontSize="26px"
                           variant="h5"
                           component="div"
                         >
-                          SH8650L
+                          Articuno 2
                         </Typography>
-                        <Typography
-                          variant="body2"
-                          marginTop={-1}
-                          color="text.secondary"
-                        >
-                          Solder paste inspection (SPI)
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <Box paddingLeft={2} marginTop={-1} paddingBottom={3}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleButtonClick}
-                      >
-                        Find Out More
-                      </Button>
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#7ed8f2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <AcUnitIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Ice"
+                        />
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#aab8c2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <FlightTakeoffIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Flying"
+                        />
+                      </Box>
                     </Box>
                   </Box>
                 </Card>
@@ -752,79 +874,124 @@ function ResponsiveCarousel() {
             </SwiperSlide>
             <SwiperSlide>
               <div data-aos="zoom-in" data-aos-duration="500">
-                <Card sx={{ maxWidth: 280, height: 385 }}>
-                  <Box paddingY={2} paddingX={1}>
-                    <CardActionArea>
-                      <Box
-                        justifyContent="center"
-                        alignItems="center"
-                        textAlign="center"
-                        sx={{ justifyContent: "center" }}
-                      >
-                        <Box
-                          component="img"
-                          sx={{
-                            width: {
-                              xs: 180,
-                              sm: 180,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            height: {
-                              xs: 160,
-                              sm: 160,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          src="/images/products/maker-ray/mr-ais50x.png"
-                          alt="Description of your image"
-                          width={275}
-                          height={300}
-                          objectFit="cover"
-                          objectPosition="center"
-                        />
-                      </Box>
+                <Card
+                  sx={{
+                    maxWidth: 280,
+                    height: 360,
+                    position: "relative",
+                    background:
+                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
+                  }}
+                >
+                  <Box
+                    paddingY={2}
+                    paddingX={0}
+                    sx={{ position: "relative", height: "100%" }}
+                  >
+                    <Box
+                      component="img"
+                      sx={{
+                        ml: -17,
+                        mt: -5,
+                        width: {
+                          xs: 800,
+                          sm: 800,
+                          md: 750,
+                          lg: 800,
+                          xl: 800,
+                        },
+                        height: {
+                          xs: 600,
+                          sm: 600,
+                          md: 600,
+                          lg: 600,
+                          xl: 600,
+                        },
+                        objectFit: "contain",
+                        objectPosition: "center",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1,
+                      }}
+                      src="/images/figures/fig05.png"
+                      alt="Description of your image"
+                      width={275}
+                      height={300}
+                    />
 
-                      <CardContent>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        mt: 30,
+                        paddingX: 0,
+                        textAlign: "left",
+                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                        width: "500px",
+                        justifyContent: "center",
+                        justifyItems: "center",
+                      }}
+                    >
+                      <Box px={1} pt={0.5} pb={2}>
                         <Typography
                           variant="body2"
                           fontSize="14px"
-                          color="text.secondary"
+                          color="white"
                         >
-                          Maker-Ray
+                          Legendary
                         </Typography>
                         <Typography
                           fontWeight="bold"
                           gutterBottom
+                          color="white"
+                          sx={{
+                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                          }}
                           marginTop={0}
                           fontSize="26px"
                           variant="h5"
                           component="div"
                         >
-                          AIS50X
+                          Articuno 3
                         </Typography>
-                        <Typography
-                          variant="body2"
-                          marginTop={-1}
-                          color="text.secondary"
-                        >
-                          Coating Inspection
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <Box paddingLeft={2} marginTop={1.8} paddingBottom={3}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleButtonClick}
-                      >
-                        Find Out More
-                      </Button>
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#7ed8f2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <AcUnitIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Ice"
+                        />
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#aab8c2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <FlightTakeoffIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Flying"
+                        />
+                      </Box>
                     </Box>
                   </Box>
                 </Card>
@@ -832,79 +999,124 @@ function ResponsiveCarousel() {
             </SwiperSlide>
             <SwiperSlide>
               <div data-aos="zoom-in" data-aos-duration="500">
-                <Card sx={{ maxWidth: 280, height: 385 }}>
-                  <Box paddingY={2} paddingX={1}>
-                    <CardActionArea>
-                      <Box
-                        justifyContent="center"
-                        alignItems="center"
-                        textAlign="center"
-                        sx={{ justifyContent: "center" }}
-                      >
-                        <Box
-                          component="img"
-                          sx={{
-                            width: {
-                              xs: 180,
-                              sm: 180,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            height: {
-                              xs: 160,
-                              sm: 160,
-                              md: 180,
-                              lg: 180,
-                              xl: 180,
-                            },
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          src="/images/products/anda/anda-icoat5.png"
-                          alt="Description of your image"
-                          width={275}
-                          height={300}
-                          objectFit="cover"
-                          objectPosition="center"
-                        />
-                      </Box>
+                <Card
+                  sx={{
+                    maxWidth: 280,
+                    height: 360,
+                    position: "relative",
+                    background:
+                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
+                  }}
+                >
+                  <Box
+                    paddingY={2}
+                    paddingX={0}
+                    sx={{ position: "relative", height: "100%" }}
+                  >
+                    <Box
+                      component="img"
+                      sx={{
+                        ml: -17,
+                        mt: -5,
+                        width: {
+                          xs: 800,
+                          sm: 800,
+                          md: 750,
+                          lg: 800,
+                          xl: 800,
+                        },
+                        height: {
+                          xs: 600,
+                          sm: 600,
+                          md: 600,
+                          lg: 600,
+                          xl: 600,
+                        },
+                        objectFit: "contain",
+                        objectPosition: "center",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: 1,
+                      }}
+                      src="/images/figures/fig05.png"
+                      alt="Description of your image"
+                      width={275}
+                      height={300}
+                    />
 
-                      <CardContent>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        mt: 30,
+                        paddingX: 0,
+                        textAlign: "left",
+                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                        width: "500px",
+                        justifyContent: "center",
+                        justifyItems: "center",
+                      }}
+                    >
+                      <Box px={1} pt={0.5} pb={2}>
                         <Typography
                           variant="body2"
                           fontSize="14px"
-                          color="text.secondary"
+                          color="white"
                         >
-                          Anda
+                          Legendary
                         </Typography>
                         <Typography
                           fontWeight="bold"
                           gutterBottom
+                          color="white"
+                          sx={{
+                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                          }}
                           marginTop={0}
                           fontSize="26px"
                           variant="h5"
                           component="div"
                         >
-                          iCoat-5 Series
+                          Articuno 4
                         </Typography>
-                        <Typography
-                          variant="body2"
-                          marginTop={-1}
-                          color="text.secondary"
-                        >
-                          Conformal Coating
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <Box paddingLeft={2} marginTop={1.8} paddingBottom={3}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleButtonClick}
-                      >
-                        Find Out More
-                      </Button>
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#7ed8f2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <AcUnitIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Ice"
+                        />
+                        <Chip
+                          size="small"
+                          sx={{
+                            color: "black",
+                            backgroundColor: "#aab8c2",
+                            opacity: "80%",
+                            mt: -2,
+                          }}
+                          icon={
+                            <FlightTakeoffIcon
+                              style={{
+                                color: "black",
+                              }}
+                            />
+                          }
+                          label="Flying"
+                        />
+                      </Box>
                     </Box>
                   </Box>
                 </Card>

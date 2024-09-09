@@ -121,7 +121,7 @@ function ResponsiveCarousel() {
       });
       setTimeout(() => {
         // Redirect to the dashboard or any other page after the delay
-        router.push(user.role === "admin" ? "/userAdmin" : "/");
+        router.push(user.role === "admin" ? "/admin" : "/");
       }, 1000);
     } else {
       // Show error alert
