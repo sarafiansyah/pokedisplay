@@ -467,81 +467,79 @@ const ResponsiveCarousel = () => {
                       ) : (
                         paginatedPokemons.map((pokemon) => (
                           <Grid item xs={6} sm={4} md={3} key={pokemon.name}>
-                            <Box>
-                              <Link
-                                href={`/pokemon/species/${pokemon.name}`}
-                                passHref
-                                style={{ textDecoration: "none" }} // Ensure textDecoration is none
-                              >
-                                <Card
-                                  sx={{
-                                    position: "relative", // Allow z-index to take effect
-                                    width: "300px",
-                                    height: "150px",
-                                    maxWidth: "400px",
-                                    marginTop: "20px",
-                                    borderRadius: "10px",
-                                    boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "left",
-                                    textDecoration: "none", // Ensure no underline on text
+                            <Link
+                              href={`/pokemon/species/${pokemon.name}`}
+                              passHref
+                              style={{ textDecoration: "none" }} // Ensure textDecoration is none
+                            >
+                              <Card
+                                sx={{
+                                  position: "relative", // Allow z-index to take effect
+                                  width: "300px",
+                                  height: "150px",
+                                  maxWidth: "400px",
+                                  marginTop: "20px",
+                                  borderRadius: "10px",
+                                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  alignItems: "left",
+                                  textDecoration: "none", // Ensure no underline on text
 
-                                    "@media (max-width: 600px)": {
-                                      width: "170px",
-                                      height: "100px",
-                                    },
-                                  }}
-                                >
-                                  <Box display="flex" flexDirection="row">
+                                  "@media (max-width: 600px)": {
+                                    width: "170px",
+                                    height: "100px",
+                                  },
+                                }}
+                              >
+                                <Box display="flex" flexDirection="row">
+                                  <Box
+                                    padding={0}
+                                    display="flex"
+                                    flexDirection="row"
+                                  >
                                     <Box
-                                      padding={0}
+                                      gap={2}
                                       display="flex"
-                                      flexDirection="row"
+                                      flexDirection="column"
+                                      paddingLeft={2}
+                                      paddingRight={0}
+                                      sx={{
+                                        position: "relative",
+                                        zIndex: 2, // Ensure content is above image
+                                      }}
                                     >
-                                      <Box
-                                        gap={2}
-                                        display="flex"
-                                        flexDirection="column"
-                                        paddingLeft={2}
-                                        paddingRight={0}
+                                      <Typography
+                                        variant="h5"
+                                        marginTop={2}
+                                        color="initial"
                                         sx={{
-                                          position: "relative",
-                                          zIndex: 2, // Ensure content is above image
+                                          "@media (max-width: 600px)": {
+                                            fontSize: "18px",
+                                          },
                                         }}
                                       >
-                                        <Typography
-                                          variant="h5"
-                                          marginTop={2}
-                                          color="initial"
-                                          sx={{
-                                            "@media (max-width: 600px)": {
-                                              fontSize: "18px",
-                                            },
-                                          }}
-                                        >
-                                          {capitalizeFirstLetter(pokemon.name)}
-                                        </Typography>
-                                        <Box
-                                          display="flex"
-                                          marginTop={-2}
-                                          flexDirection="row"
-                                          sx={{ textDecoration: "none" }} // Ensure no underline on chips
-                                        >
-                                          {typeLoad ? (
-                                            <Box
-                                              display="flex"
-                                              justifyContent="center"
-                                              alignItems="center"
-                                              width="100%"
-                                              height="100%"
-                                            >
-                                              <CircularProgress />
-                                            </Box>
-                                          ) : (
-                                            pokeDetails[
-                                              pokemon.name
-                                            ]?.types.map((type) => (
+                                        {capitalizeFirstLetter(pokemon.name)}
+                                      </Typography>
+                                      <Box
+                                        display="flex"
+                                        marginTop={-2}
+                                        flexDirection="row"
+                                        sx={{ textDecoration: "none" }} // Ensure no underline on chips
+                                      >
+                                        {typeLoad ? (
+                                          <Box
+                                            display="flex"
+                                            justifyContent="center"
+                                            alignItems="center"
+                                            width="100%"
+                                            height="100%"
+                                          >
+                                            <CircularProgress />
+                                          </Box>
+                                        ) : (
+                                          pokeDetails[pokemon.name]?.types.map(
+                                            (type) => (
                                               <Chip
                                                 size="small"
                                                 key={type.type.name}
@@ -562,50 +560,50 @@ const ResponsiveCarousel = () => {
                                                   },
                                                 }}
                                               />
-                                            ))
-                                          )}
-                                        </Box>
+                                            )
+                                          )
+                                        )}
                                       </Box>
-
-                                      <Box
-                                        component="img"
-                                        sx={{
-                                          position: "absolute", // Position image absolutely
-                                          top: 0,
-                                          right: 0,
-                                          width: {
-                                            xs: "100px",
-                                            sm: 200,
-                                            md: 200,
-                                            lg: 200,
-                                            xl: 200,
-                                          },
-                                          height: {
-                                            xs: "100px",
-                                            sm: "200px",
-                                            md: "200px",
-                                            lg: "200px",
-                                            xl: "200px",
-                                          },
-                                          objectFit: "cover",
-                                          objectPosition: "center",
-                                          zIndex: 1, // Set z-index lower than content
-                                          opacity: 0.5, // Optional: make image semi-transparent
-                                          transition: "opacity 0.3s ease", // Smooth transition for opacity change
-                                          "&:hover": {
-                                            opacity: 1, // Increase opacity on hover
-                                          },
-                                        }}
-                                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
-                                          pokemon.url.split("/")[6]
-                                        }.png`}
-                                        alt={pokemon.name}
-                                      />
                                     </Box>
+
+                                    <Box
+                                      component="img"
+                                      sx={{
+                                        position: "absolute", // Position image absolutely
+                                        top: 0,
+                                        right: 0,
+                                        width: {
+                                          xs: "100px",
+                                          sm: 200,
+                                          md: 200,
+                                          lg: 200,
+                                          xl: 200,
+                                        },
+                                        height: {
+                                          xs: "100px",
+                                          sm: "200px",
+                                          md: "200px",
+                                          lg: "200px",
+                                          xl: "200px",
+                                        },
+                                        objectFit: "cover",
+                                        objectPosition: "center",
+                                        zIndex: 1, // Set z-index lower than content
+                                        opacity: 0.5, // Optional: make image semi-transparent
+                                        transition: "opacity 0.3s ease", // Smooth transition for opacity change
+                                        "&:hover": {
+                                          opacity: 1, // Increase opacity on hover
+                                        },
+                                      }}
+                                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+                                        pokemon.url.split("/")[6]
+                                      }.png`}
+                                      alt={pokemon.name}
+                                    />
                                   </Box>
-                                </Card>
-                              </Link>
-                            </Box>
+                                </Box>
+                              </Card>
+                            </Link>
                           </Grid>
                         ))
                       )}
