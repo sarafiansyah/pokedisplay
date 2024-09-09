@@ -448,7 +448,7 @@ const ResponsiveCarousel = () => {
                       gap={2}
                       sx={{
                         "@media (max-width: 600px)": {
-                          marginLeft: -0.2,
+                          marginLeft: -0.5,
                         },
                       }}
                     >
