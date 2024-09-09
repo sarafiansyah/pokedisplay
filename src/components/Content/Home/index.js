@@ -467,11 +467,11 @@ function ResponsiveCarousel() {
                     flexDirection: "column",
                     alignItems: "center", // Center content horizontally
                     ml: {
-                      xs: -4,
-                      sm: -4,
-                      md: -10,
-                      lg: -10,
-                      xl: -10,
+                      xs: 0,
+                      sm: 0,
+                      md: -20,
+                      lg: -20,
+                      xl: -20,
                     },
                     mt: {
                       xs: -35,
@@ -481,15 +481,15 @@ function ResponsiveCarousel() {
                       xl: 6,
                     },
                     width: {
-                      xs: 400,
-                      sm: 300,
+                      xs: "300px",
+                      sm: "300px",
                       md: "600px",
                       lg: "600px",
                       xl: "600px",
                     },
                     height: {
-                      xs: 400,
-                      sm: 400,
+                      xs: "400px",
+                      sm: "400px",
                       md: "400px",
                       lg: "400px",
                       xl: "400px",
@@ -531,12 +531,12 @@ function ResponsiveCarousel() {
                       <Typography
                         sx={{
                           color: "#303030",
-                          marginLeft: {
-                            xs: 0,
-                            sm: 0,
-                            md: 0,
-                            lg: 0,
-                            xl: 0,
+                          fontSize: {
+                            xs: "14px",
+                            sm: "14px",
+                            md: "18px",
+                            lg: "18px",
+                            xl: "18px",
                           },
                         }}
                         variant="body1"
@@ -1258,8 +1258,8 @@ function ResponsiveCarousel() {
                     flexDirection: "column",
                     alignItems: "center", // Center content horizontally
                     ml: {
-                      xs: -2,
-                      sm: -2,
+                      xs: 0,
+                      sm: 0,
                       md: 0,
                       lg: 0,
                       xl: 0,
@@ -1272,15 +1272,15 @@ function ResponsiveCarousel() {
                       xl: 6,
                     },
                     width: {
-                      xs: 400,
-                      sm: 300,
+                      xs: "300px",
+                      sm: "300px",
                       md: "600px",
                       lg: "600px",
                       xl: "600px",
                     },
                     height: {
-                      xs: 400,
-                      sm: 400,
+                      xs: "400px",
+                      sm: "400px",
                       md: "400px",
                       lg: "400px",
                       xl: "400px",
@@ -1322,12 +1322,12 @@ function ResponsiveCarousel() {
                       <Typography
                         sx={{
                           color: "#303030",
-                          marginLeft: {
-                            xs: 0,
-                            sm: 0,
-                            md: 0,
-                            lg: 0,
-                            xl: 0,
+                          fontSize: {
+                            xs: "14px",
+                            sm: "14px",
+                            md: "18px",
+                            lg: "18px",
+                            xl: "18px",
                           },
                         }}
                         variant="body1"
@@ -1354,6 +1354,13 @@ function ResponsiveCarousel() {
                       md: "130px",
                       lg: "130px",
                       xl: "130px",
+                    },
+                    display: {
+                      xs: "none",
+                      sm: "none",
+                      md: "flex",
+                      lg: "flex",
+                      xl: "flex",
                     },
                   }}
                 >
