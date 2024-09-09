@@ -10,6 +10,7 @@ import {
   Box,
   Container,
   Grid,
+  CircularProgress,
 } from "@mui/material";
 import Image from "next/image";
 import Card from "@mui/material/Card";
@@ -99,18 +100,17 @@ const CarouselItem = ({ image, title, subtitle }) => (
 );
 
 function ResponsiveCarousel() {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-  };
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     AOS.init();
+
+    // Simulate a delay or loading process
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the delay as needed
+
+    return () => clearTimeout(timer);
   }, []);
 
   const videoRef = useRef(null);
@@ -169,85 +169,105 @@ function ResponsiveCarousel() {
 
   return (
     <>
-      <Layout>
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          effect="fade"
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
+      {loading ? (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+            width: "100vw",
+            position: "fixed",
+            // opacity: "50%",
+            top: 0,
+            left: 0,
+            backgroundColor: "#000000", // Dark overlay for the loader
+            zIndex: 9999,
           }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, EffectFade]}
-          className="mySwiper"
         >
-          <SwiperSlide>
-            <Box
-              height="600px"
-              position="relative"
-              style={{
-                width: "100%",
-                overflow: "hidden",
-                backgroundColor: "black",
-              }}
-            >
-              <video
-                ref={videoRef}
-                width="100%"
-                height="100%"
-                controls
-                autoPlay
-                muted
-                loop
-                style={{ zIndex: 1 }} // Loop the video
-              >
-                <source src="./videos/pokemon_trailer.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              {/* Dark overlay */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  zIndex: 2, // Set higher zIndex for the overlay
-                }}
-              ></div>
-              <Typography
-                variant="h2"
-                color="white"
-                marginTop={30}
-                position="absolute" // Set position to absolute
-                textAlign="center"
-                zIndex={3}
-                sx={{ textAlign: "center" }} // Set higher zIndex for the text
-              >
-                Services
-              </Typography>
-              <Typography
-                variant="h4"
-                color="white"
-                marginTop={0}
+          <CircularProgress size={100} color="primary" />
+        </Box>
+      ) : (
+        <Layout>
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            effect="fade"
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, EffectFade]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <Box
+                height="600px"
                 position="relative"
-                textAlign="left"
-                sx={{
-                  textAlign: "center",
-                  justifyContent: "center",
+                style={{
+                  width: "100%",
+                  overflow: "hidden",
+                  backgroundColor: "black",
                 }}
               >
-                Short Description
-              </Typography>
-            </Box>
-          </SwiperSlide>
-        </Swiper>
-      </Layout>
+                <video
+                  ref={videoRef}
+                  width="100%"
+                  height="100%"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  style={{ zIndex: 1 }} // Loop the video
+                >
+                  <source src="./videos/pokemon_trailer.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                {/* Dark overlay */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    zIndex: 2, // Set higher zIndex for the overlay
+                  }}
+                ></div>
+                <Typography
+                  variant="h2"
+                  color="white"
+                  marginTop={30}
+                  position="absolute" // Set position to absolute
+                  textAlign="center"
+                  zIndex={3}
+                  sx={{ textAlign: "center" }} // Set higher zIndex for the text
+                >
+                  Services
+                </Typography>
+                <Typography
+                  variant="h4"
+                  color="white"
+                  marginTop={0}
+                  position="relative"
+                  textAlign="left"
+                  sx={{
+                    textAlign: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  Short Description
+                </Typography>
+              </Box>
+            </SwiperSlide>
+          </Swiper>
+        </Layout>
+      )}
     </>
   );
 }

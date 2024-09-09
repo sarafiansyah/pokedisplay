@@ -638,7 +638,7 @@ function ResponsiveCarousel() {
                       <Box
                         component="img"
                         sx={{
-                          ml: -40,
+                          ml: -43,
                           mt: -3,
                           width: {
                             xs: 800,
@@ -1139,7 +1139,7 @@ function ResponsiveCarousel() {
                       <Box
                         component="img"
                         sx={{
-                          ml: -6,
+                          ml: -20,
                           mt: -4,
                           width: {
                             xs: 800,
@@ -1161,6 +1161,7 @@ function ResponsiveCarousel() {
                           top: 0,
                           left: 0,
                           zIndex: 1,
+                          transform: "scaleX(-1)",
                         }}
                         src="/images/figures/fig03.png"
                         alt="Description of your image"
@@ -1234,197 +1235,204 @@ function ResponsiveCarousel() {
       </Box>
 
       <div data-aos="zoom-in-up" data-aos-duration="2000">
-        {" "}
-        <Box paddingLeft={5} paddingTop={5} paddingRight={5} paddingBottom={5}>
-          <Grid item xs={12} md={6}></Grid>
+        <Container>
+          {" "}
+          <Box
+            paddingLeft={5}
+            paddingTop={5}
+            paddingRight={5}
+            paddingBottom={5}
+          >
+            <Grid item xs={12} md={6}></Grid>
 
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <Card
-                sx={{
-                  // width: "600px",
-                  // height: "400px",
-                  marginTop: "50px",
-                  borderRadius: "10px",
-                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center", // Center content horizontally
-                  ml: {
-                    xs: -2,
-                    sm: -2,
-                    md: 0,
-                    lg: 0,
-                    xl: 0,
-                  },
-                  mt: {
-                    xs: 0,
-                    sm: 0,
-                    md: 6,
-                    lg: 6,
-                    xl: 6,
-                  },
-                  width: {
-                    xs: 400,
-                    sm: 300,
-                    md: "600px",
-                    lg: "600px",
-                    xl: "600px",
-                  },
-                  height: {
-                    xs: 400,
-                    sm: 400,
-                    md: "400px",
-                    lg: "400px",
-                    xl: "400px",
-                  },
-                }}
-              >
-                <Box padding={5}>
-                  <Box>
-                    <Typography
-                      sx={{
-                        color: "#303030",
-                        fontSize: {
-                          xs: "32px",
-                          sm: "32px",
-                          md: "2.4285714285714284rem;",
-                          lg: "2.4285714285714284rem;",
-                          xl: "2.4285714285714284rem;",
-                        },
-                        marginLeft: {
-                          xs: 0,
-                          sm: 0,
-                          md: 0,
-                          lg: 0,
-                          xl: 0,
-                        },
-                      }}
-                      variant="h4"
-                      fontWeight="bold"
-                    >
-                      Feedbacks
-                    </Typography>
-                    <Divider
-                      sx={{
-                        marginTop: 1,
-                        height: 3,
-                        backgroundImage: `linear-gradient(to right, #ffde00 10%, #3b4cca 10%)`,
-                      }}
-                    />
-                    <Typography
-                      sx={{
-                        color: "#303030",
-                        marginLeft: {
-                          xs: 0,
-                          sm: 0,
-                          md: 0,
-                          lg: 0,
-                          xl: 0,
-                        },
-                      }}
-                      variant="body1"
-                      marginTop={3}
-                      color="initial"
-                    >
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industrys
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book.
-                    </Typography>
-                  </Box>
-                </Box>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  marginTop: "50px",
-                  marginLeft: {
-                    xs: "0",
-                    sm: "0",
-                    md: "130px",
-                    lg: "130px",
-                    xl: "130px",
-                  },
-                }}
-              >
-                <Swiper
-                  effect={"cards"}
-                  grabCursor={true}
-                  modules={[EffectCards]}
-                  style={{ width: 320 }}
-                  className="swiperSize"
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={6}>
+                <Card
+                  sx={{
+                    // width: "600px",
+                    // height: "400px",
+                    marginTop: "50px",
+                    borderRadius: "10px",
+                    boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center", // Center content horizontally
+                    ml: {
+                      xs: -2,
+                      sm: -2,
+                      md: 0,
+                      lg: 0,
+                      xl: 0,
+                    },
+                    mt: {
+                      xs: 0,
+                      sm: 0,
+                      md: 6,
+                      lg: 6,
+                      xl: 6,
+                    },
+                    width: {
+                      xs: 400,
+                      sm: 300,
+                      md: "600px",
+                      lg: "600px",
+                      xl: "600px",
+                    },
+                    height: {
+                      xs: 400,
+                      sm: 400,
+                      md: "400px",
+                      lg: "400px",
+                      xl: "400px",
+                    },
+                  }}
                 >
-                  <SwiperSlide
-                    className="swiperSlide"
-                    style={{
-                      boxShadow: "none",
-                      backgroundColor: "rgba(0, 0, 0, 0.0)",
-                    }}
+                  <Box padding={5}>
+                    <Box>
+                      <Typography
+                        sx={{
+                          color: "#303030",
+                          fontSize: {
+                            xs: "32px",
+                            sm: "32px",
+                            md: "2.4285714285714284rem;",
+                            lg: "2.4285714285714284rem;",
+                            xl: "2.4285714285714284rem;",
+                          },
+                          marginLeft: {
+                            xs: 0,
+                            sm: 0,
+                            md: 0,
+                            lg: 0,
+                            xl: 0,
+                          },
+                        }}
+                        variant="h4"
+                        fontWeight="bold"
+                      >
+                        Feedbacks
+                      </Typography>
+                      <Divider
+                        sx={{
+                          marginTop: 1,
+                          height: 3,
+                          backgroundImage: `linear-gradient(to right, #ffde00 10%, #3b4cca 10%)`,
+                        }}
+                      />
+                      <Typography
+                        sx={{
+                          color: "#303030",
+                          marginLeft: {
+                            xs: 0,
+                            sm: 0,
+                            md: 0,
+                            lg: 0,
+                            xl: 0,
+                          },
+                        }}
+                        variant="body1"
+                        marginTop={3}
+                        color="initial"
+                      >
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industrys
+                        standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it
+                        to make a type specimen book.
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Card>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Box
+                  sx={{
+                    marginTop: "50px",
+                    marginLeft: {
+                      xs: "0",
+                      sm: "0",
+                      md: "130px",
+                      lg: "130px",
+                      xl: "130px",
+                    },
+                  }}
+                >
+                  <Swiper
+                    effect={"cards"}
+                    grabCursor={true}
+                    modules={[EffectCards]}
+                    style={{ width: 320 }}
+                    className="swiperSize"
                   >
-                    <Image
-                      className=""
-                      src="/images/cards/rs_tcg01.png"
-                      alt="Description of your image"
-                      width={300}
-                      height={400}
-                      objectFit="contain"
-                      objectPosition="center"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide
-                    style={{
-                      boxShadow: "none",
-                      backgroundColor: "rgba(0, 0, 0, 0.0)",
-                    }}
-                  >
-                    <Image
-                      className=""
-                      src="/images/cards/rs_tcg02.png"
-                      alt="Description of your image"
-                      width={300}
-                      height={400}
-                      objectFit="contain"
-                      objectPosition="center"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide style={{ backgroundColor: "transparent" }}>
-                    <Image
-                      className=""
-                      src="/images/cards/rs_tcg00.png"
-                      alt="Description of your image"
-                      width={300}
-                      height={400}
-                      objectFit="contain"
-                      objectPosition="center"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide style={{ backgroundColor: "transparent" }}>
-                    <Image
-                      src="/images/cards/rs_tcg00.png"
-                      alt="Description of your image"
-                      width={300}
-                      height={400}
-                      objectFit="contain"
-                      objectPosition="center"
-                    />{" "}
-                    <Image
-                      className=""
-                      src="/images/cards/tcg01.png"
-                      alt="Description of your image"
-                      width={300}
-                      height={400}
-                      objectFit="contain"
-                      objectPosition="center"
-                    />
-                  </SwiperSlide>
-                </Swiper>
-              </Box>
+                    <SwiperSlide
+                      className="swiperSlide"
+                      style={{
+                        boxShadow: "none",
+                        backgroundColor: "rgba(0, 0, 0, 0.0)",
+                      }}
+                    >
+                      <Image
+                        className=""
+                        src="/images/cards/rs_tcg01.png"
+                        alt="Description of your image"
+                        width={300}
+                        height={400}
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide
+                      style={{
+                        boxShadow: "none",
+                        backgroundColor: "rgba(0, 0, 0, 0.0)",
+                      }}
+                    >
+                      <Image
+                        className=""
+                        src="/images/cards/rs_tcg02.png"
+                        alt="Description of your image"
+                        width={300}
+                        height={400}
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide style={{ backgroundColor: "transparent" }}>
+                      <Image
+                        className=""
+                        src="/images/cards/rs_tcg00.png"
+                        alt="Description of your image"
+                        width={300}
+                        height={400}
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide style={{ backgroundColor: "transparent" }}>
+                      <Image
+                        src="/images/cards/rs_tcg00.png"
+                        alt="Description of your image"
+                        width={300}
+                        height={400}
+                        objectFit="contain"
+                        objectPosition="center"
+                      />{" "}
+                      <Image
+                        className=""
+                        src="/images/cards/tcg01.png"
+                        alt="Description of your image"
+                        width={300}
+                        height={400}
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        </Container>
       </div>
 
       <div data-aos="zoom-in-up" data-aos-duration="2000">
