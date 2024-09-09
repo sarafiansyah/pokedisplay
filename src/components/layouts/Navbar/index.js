@@ -398,7 +398,7 @@ function ResponsiveAppBar() {
               </Link>
               <Link
                 style={{ textDecoration: "none" }}
-                href={`/products`}
+                href={`/pokemons`}
                 passHref
               >
                 <MenuItem onClick={handleCloseNavMenu}>
@@ -406,17 +406,13 @@ function ResponsiveAppBar() {
                   Pokemons
                 </MenuItem>
               </Link>
-              <Link style={{ textDecoration: "none" }} href={`/about`} passHref>
+              <Link style={{ textDecoration: "none" }} href={`/items`} passHref>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <AccountBalanceIcon sx={{ marginRight: 1 }} />
                   Items
                 </MenuItem>
               </Link>
-              <Link
-                style={{ textDecoration: "none" }}
-                href={`/services`}
-                passHref
-              >
+              <Link style={{ textDecoration: "none" }} href={`/types`} passHref>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <LibraryAddCheckIcon sx={{ marginRight: 1 }} />
                   Types
@@ -428,44 +424,44 @@ function ResponsiveAppBar() {
                 passHref
               >
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <SupportAgentIcon sx={{ marginRight: 1 }} />
+                  <LibraryAddCheckIcon sx={{ marginRight: 1 }} />
                   About
                 </MenuItem>
-                <Box
-                  display="flex"
+              </Link>
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                justifyItems="center"
+                marginTop={1}
+                marginBottom={2}
+              >
+                <Button
                   justifyContent="center"
                   alignItems="center"
                   justifyItems="center"
-                  marginTop={1}
-                  marginBottom={2}
-                >
-                  <Button
-                    justifyContent="center"
-                    alignItems="center"
-                    justifyItems="center"
-                    variant="contained"
-                    borderRadius="50px"
-                    href={`/auth/login`}
-                    sx={{
-                      borderRadius: "50px",
-                      "@media (max-width: 600px)": {
-                        fontSize: "12px",
-                        paddingX: 2,
-                      },
-                    }}
-                  >
-                    Login
-                  </Button>
-                </Box>
-
-                <Divider
+                  variant="contained"
+                  borderRadius="50px"
+                  href={`/auth/login`}
                   sx={{
-                    marginTop: 1,
-                    height: 3,
-                    backgroundImage: `linear-gradient(to right, #e82c35 10%, #0c248c 10%)`,
+                    borderRadius: "50px",
+                    "@media (max-width: 600px)": {
+                      fontSize: "12px",
+                      paddingX: 2,
+                    },
                   }}
-                />
-              </Link>
+                >
+                  Login
+                </Button>
+              </Box>
+
+              <Divider
+                sx={{
+                  marginTop: 1,
+                  height: 3,
+                  backgroundImage: `linear-gradient(to right, #e82c35 10%, #0c248c 10%)`,
+                }}
+              />
             </Menu>
           </Box>
         </Toolbar>

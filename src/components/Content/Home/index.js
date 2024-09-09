@@ -514,8 +514,20 @@ function ResponsiveCarousel() {
               >
                 <Card
                   sx={{
-                    maxWidth: 280,
-                    height: 360,
+                    maxWidth: {
+                      xs: 250,
+                      sm: 280,
+                      md: 280,
+                      lg: 280,
+                      xl: 280,
+                    },
+                    height: {
+                      xs: 360,
+                      sm: 360,
+                      md: 360,
+                      lg: 360,
+                      xl: 360,
+                    },
                     position: "relative",
                     background:
                       "linear-gradient(45deg, #A85EA2 30%, #6B2492 90%)",
@@ -626,8 +638,20 @@ function ResponsiveCarousel() {
               >
                 <Card
                   sx={{
-                    maxWidth: 280,
-                    height: 360,
+                    maxWidth: {
+                      xs: 250,
+                      sm: 280,
+                      md: 280,
+                      lg: 280,
+                      xl: 280,
+                    },
+                    height: {
+                      xs: 360,
+                      sm: 360,
+                      md: 360,
+                      lg: 360,
+                      xl: 360,
+                    },
                     position: "relative",
                     background:
                       "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
@@ -751,8 +775,20 @@ function ResponsiveCarousel() {
               <div data-aos="zoom-in" data-aos-duration="500">
                 <Card
                   sx={{
-                    maxWidth: 280,
-                    height: 360,
+                    maxWidth: {
+                      xs: 250,
+                      sm: 280,
+                      md: 280,
+                      lg: 280,
+                      xl: 280,
+                    },
+                    height: {
+                      xs: 360,
+                      sm: 360,
+                      md: 360,
+                      lg: 360,
+                      xl: 360,
+                    },
                     position: "relative",
                     background:
                       "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
@@ -876,8 +912,20 @@ function ResponsiveCarousel() {
               <div data-aos="zoom-in" data-aos-duration="500">
                 <Card
                   sx={{
-                    maxWidth: 280,
-                    height: 360,
+                    maxWidth: {
+                      xs: 250,
+                      sm: 280,
+                      md: 280,
+                      lg: 280,
+                      xl: 280,
+                    },
+                    height: {
+                      xs: 360,
+                      sm: 360,
+                      md: 360,
+                      lg: 360,
+                      xl: 360,
+                    },
                     position: "relative",
                     background:
                       "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
@@ -1001,8 +1049,20 @@ function ResponsiveCarousel() {
               <div data-aos="zoom-in" data-aos-duration="500">
                 <Card
                   sx={{
-                    maxWidth: 280,
-                    height: 360,
+                    maxWidth: {
+                      xs: 250,
+                      sm: 280,
+                      md: 280,
+                      lg: 280,
+                      xl: 280,
+                    },
+                    height: {
+                      xs: 360,
+                      sm: 360,
+                      md: 360,
+                      lg: 360,
+                      xl: 360,
+                    },
                     position: "relative",
                     background:
                       "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
