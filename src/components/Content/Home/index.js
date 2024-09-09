@@ -65,7 +65,7 @@ function ResponsiveCarousel() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setSlidesPerView(1);
+        setSlidesPerView(2);
       } else if (window.innerWidth < 992) {
         setSlidesPerView(2);
       } else if (window.innerWidth < 1200) {
@@ -495,9 +495,9 @@ function ResponsiveCarousel() {
           </Box>
         </div>
 
-        <Box padding="20px">
+        <Box padding="10px">
           <Swiper
-            spaceBetween={spaceBetween}
+            spaceBetween={20}
             slidesPerView={slidesPerView}
             freeMode={true}
             pagination={{
