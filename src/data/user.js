@@ -4,14 +4,14 @@ export const users = [
     username: "admin",
     password: "admin123", // In a real application, use hashed passwords
     firstName: "Admin",
-    LastName: "Pikachu",
+    lastName: "Pikachu",
     role: "admin",
   },
   {
     id: 2,
     username: "user",
     firstName: "Mahesa",
-    LastName: "Rafiansyah",
+    lastName: "Rafiansyah",
     password: "user123",
     role: "user",
   },
@@ -20,7 +20,7 @@ export const users = [
     username: "bulbasaur",
     password: "user123",
     firstName: "Bulba",
-    LastName: "Saur",
+    lastName: "Saur",
     role: "user",
   },
   {
@@ -28,7 +28,7 @@ export const users = [
     username: "charmander",
     password: "user123",
     firstName: "Char",
-    LastName: "Mander",
+    lastName: "Mander",
     role: "user",
   },
   {
@@ -36,7 +36,7 @@ export const users = [
     username: "squirtle",
     password: "user123",
     firstName: "Squirt",
-    LastName: "Tle",
+    lastName: "Tle",
     role: "user",
   },
   {
@@ -44,7 +44,7 @@ export const users = [
     username: "jigglypuff",
     password: "user123",
     firstName: "Jiggly",
-    LastName: "Puff",
+    lastName: "Puff",
     role: "user",
   },
   {
@@ -52,7 +52,7 @@ export const users = [
     username: "meowth",
     password: "user123",
     firstName: "Meow",
-    LastName: "Th",
+    lastName: "Th",
     role: "user",
   },
   {
@@ -60,7 +60,7 @@ export const users = [
     username: "psyduck",
     password: "user123",
     firstName: "Psy",
-    LastName: "Duck",
+    lastName: "Duck",
     role: "user",
   },
   {
@@ -68,7 +68,7 @@ export const users = [
     username: "snorlax",
     password: "user123",
     firstName: "Snor",
-    LastName: "Lax",
+    lastName: "Lax",
     role: "user",
   },
   {
@@ -76,7 +76,7 @@ export const users = [
     username: "eevee",
     password: "user123",
     firstName: "Eve",
-    LastName: "Ee",
+    lastName: "Ee",
     role: "user",
   },
   {
@@ -84,7 +84,7 @@ export const users = [
     username: "mewtwo",
     password: "user123",
     firstName: "Mew",
-    LastName: "Two",
+    lastName: "Two",
     role: "user",
   },
   {
@@ -92,7 +92,7 @@ export const users = [
     username: "mew",
     password: "user123",
     firstName: "Mew",
-    LastName: "One",
+    lastName: "One",
     role: "user",
   },
   {
@@ -100,7 +100,7 @@ export const users = [
     username: "charizard",
     password: "user123",
     firstName: "Char",
-    LastName: "Izard",
+    lastName: "Izard",
     role: "user",
   },
   {
@@ -108,7 +108,7 @@ export const users = [
     username: "blastoise",
     password: "user123",
     firstName: "Blast",
-    LastName: "Oise",
+    lastName: "Oise",
     role: "user",
   },
   {
@@ -116,7 +116,7 @@ export const users = [
     username: "venusaur",
     password: "user123",
     firstName: "Venu",
-    LastName: "Saur",
+    lastName: "Saur",
     role: "user",
   },
   {
@@ -124,7 +124,7 @@ export const users = [
     username: "pidgey",
     password: "user123",
     firstName: "Pid",
-    LastName: "Gey",
+    lastName: "Gey",
     role: "user",
   },
   {
@@ -132,7 +132,7 @@ export const users = [
     username: "rattata",
     password: "user123",
     firstName: "Ratt",
-    LastName: "Ata",
+    lastName: "Ata",
     role: "user",
   },
   {
@@ -140,7 +140,7 @@ export const users = [
     username: "zubat",
     password: "user123",
     firstName: "Zu",
-    LastName: "Bat",
+    lastName: "Bat",
     role: "user",
   },
   {
@@ -148,7 +148,7 @@ export const users = [
     username: "magikarp",
     password: "user123",
     firstName: "Magi",
-    LastName: "Karp",
+    lastName: "Karp",
     role: "user",
   },
   {
@@ -156,7 +156,7 @@ export const users = [
     username: "gengar",
     password: "user123",
     firstName: "Gen",
-    LastName: "Gar",
+    lastName: "Gar",
     role: "user",
   },
 ];

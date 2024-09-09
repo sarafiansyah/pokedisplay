@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/themes/theme"; // Ensure this import is correct
 import "@fontsource/poppins/400.css"; // Regular
 import "@fontsource/poppins/600.css"; // Semi-bold (adjust as needed)
+import "@/styles//styles.css";
 
 // Create a custom theme with Poppins font and typography customization
 const customTheme = createTheme({

@@ -8,7 +8,7 @@ import Image from "next/image";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { CardActionArea, Button, TextField } from "@mui/material";
+import { CardActionArea, Button, TextField, Tooltip } from "@mui/material";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
@@ -299,17 +299,20 @@ function ResponsiveCarousel() {
                         >
                           Login
                         </Typography>
-                        <TextField
-                          id="username"
-                          label="Username"
-                          value={username}
-                          onChange={(e) => setUsername(e.target.value)}
-                          placeholder="user"
-                        />
+                        <Tooltip title="Login as Admin to Access The Administrator Panel">
+                          <TextField
+                            id="username"
+                            label="Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="user / admin"
+                          />
+                        </Tooltip>
+
                         <TextField
                           id="username"
                           label="Password"
-                          placeholder="user123"
+                          placeholder="user123 / admin123"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                         />
@@ -323,9 +326,9 @@ function ResponsiveCarousel() {
                           >
                             LOGIN
                           </Button>
-                          <Button variant="contained" color="primary">
+                          {/* <Button variant="contained" color="primary">
                             SIGN UP
-                          </Button>
+                          </Button> */}
                         </Box>
                       </Box>
                     </Box>

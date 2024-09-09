@@ -19,12 +19,21 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
   Typography,
   Box,
+  InputLabel,
+  Container,
+  DialogContent,
+  Select,
   Divider,
   MenuItem,
+  DialogActions,
   Menu,
   Avatar,
   TableCell,
   TableRow,
+  FormControl,
+  Dialog,
+  DialogTitle,
+  TextField,
   TableHead,
   Table,
   Paper,
@@ -35,7 +44,13 @@ import {
   Tooltip,
 } from "@mui/material";
 import Image from "next/image";
-import { users } from "@/data/user";
+import { users as initialUsers } from "@/data/user";
+
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import GroupIcon from "@mui/icons-material/Group";
+import FeedbackIcon from "@mui/icons-material/Feedback";
+import ArticleIcon from "@mui/icons-material/Article";
+import ListIcon from "@mui/icons-material/List";
 
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
@@ -109,6 +124,7 @@ const Drawer = styled(MuiDrawer, {
 
 export default function MiniDrawer() {
   const theme = useTheme();
+  const [users, setUsers] = useState(initialUsers);
   const [open, setOpen] = React.useState(false);
   const [selectedMenu, setSelectedMenu] = React.useState("Dashboard");
   const [page, setPage] = useState(0);
@@ -120,6 +136,65 @@ export default function MiniDrawer() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [openDialog, setOpenDialog] = useState(false);
+  const [editingUser, setEditingUser] = useState(null);
+  const [newUserData, setNewUserData] = useState({
+    id: "",
+    username: "",
+    firstName: "",
+    lastName: "",
+    role: "",
+  });
+
+  // Filter users based on the search query
+  const filteredUsers = users.filter((user) =>
+    user.username.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleOpenDialog = (user = null) => {
+    setEditingUser(user);
+    setNewUserData(
+      user || { id: "", username: "", firstName: "", lastName: "", role: "" }
+    );
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+    setEditingUser(null);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewUserData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = () => {
+    if (editingUser) {
+      // Edit existing user
+      const updatedUsers = users.map((user) =>
+        user.id === editingUser.id ? { ...newUserData } : user
+      );
+      setUsers(updatedUsers);
+      Swal.fire(
+        "Success",
+        "User data has been updated successfully!",
+        "success"
+      );
+    } else {
+      // Add new user
+      const newId = users.length ? users[users.length - 1].id + 1 : 1;
+      const newUser = { ...newUserData, id: newId };
+      setUsers([...users, newUser]);
+      Swal.fire("Success", "New user has been added successfully!", "success");
+    }
+    handleCloseDialog();
+  };
 
   useEffect(() => {
     // Simulate checking if user is logged in
@@ -156,11 +231,11 @@ export default function MiniDrawer() {
   };
 
   const menuItems = [
-    { text: "Dashboard", icon: <InboxIcon /> },
-    { text: "Manage Users", icon: <MailIcon /> },
-    { text: "Feedbacks", icon: <InboxIcon /> },
-    { text: "Summary", icon: <MailIcon /> },
-    { text: "Version", icon: <InboxIcon /> },
+    { text: "Dashboard", icon: <DashboardIcon /> },
+    { text: "Manage Users", icon: <GroupIcon /> },
+    { text: "Feedbacks", icon: <FeedbackIcon /> },
+    { text: "Summary", icon: <ArticleIcon /> },
+    { text: "Version", icon: <ListIcon /> },
   ];
 
   const handleChangePage = (event, newPage) => {
@@ -186,93 +261,329 @@ export default function MiniDrawer() {
     switch (selectedMenu) {
       case "Dashboard":
         return (
-          <Box>
-            <Typography variant="h5" fontWeight="bold">
-              Dashboard
-            </Typography>
-            <Box display="flex">
-              <Box sx={{ mt: 0, ml: -20 }}>
-                <Image
-                  src="/images/figures/fig01.png"
-                  alt="Logo"
-                  width={600}
-                  height={500}
-                  objectFit="cover"
-                  style={{ cursor: "pointer", marginTop: "3px" }}
-                />
-              </Box>
-              <Box sx={{ mt: 5 }}>
-                <Typography variant="h4" color="initial">
-                  Welcome, {userName}
-                </Typography>
-                <Typography variant="body1" color="initial">
-                  Manage application background through this administrator
-                  panel!
-                </Typography>
+          <Container>
+            <Box>
+              <Box display="flex">
+                <Box sx={{ mt: 0 }}>
+                  <Typography variant="h4" color="initial">
+                    Welcome, {userName}
+                  </Typography>
+                  <Typography variant="body1" color="initial">
+                    Manage application background through this administrator
+                    panel!
+                  </Typography>
+                </Box>
               </Box>
             </Box>
-          </Box>
+          </Container>
         );
       case "Manage Users":
         return (
-          <Box>
-            <Typography variant="h5" fontWeight="bold">
-              Users Management
-            </Typography>
-            <Box padding={2}>
-              <Paper sx={{ width: "100%", overflow: "hidden" }}>
-                <TableContainer>
-                  <Table>
-                    <TableHead>
-                      <TableRow>
-                        <TableCell sx={{ fontWeight: "bold" }}>ID</TableCell>
-                        <TableCell sx={{ fontWeight: "bold" }}>
-                          Username
-                        </TableCell>
-                        <TableCell sx={{ fontWeight: "bold" }}>
-                          First Name
-                        </TableCell>
-                        <TableCell sx={{ fontWeight: "bold" }}>
-                          Last Name
-                        </TableCell>
-                        <TableCell sx={{ fontWeight: "bold" }}>Role</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {users
-                        .slice(
-                          page * rowsPerPage,
-                          page * rowsPerPage + rowsPerPage
-                        )
-                        .map((user) => (
-                          <TableRow key={user.id}>
-                            <TableCell>{user.id}</TableCell>
-                            <TableCell>{user.username}</TableCell>
-                            <TableCell>{user.firstName}</TableCell>
-                            <TableCell>{user.LastName}</TableCell>
-                            <TableCell>{user.role}</TableCell>
-                          </TableRow>
-                        ))}
-                      {emptyRows > 0 && (
-                        <TableRow style={{ height: 53 * emptyRows }}>
-                          <TableCell colSpan={6} />
+          <Container>
+            <Box>
+              <Typography
+                variant="h5"
+                fontWeight="bold"
+                sx={{
+                  ml: {
+                    xs: -4,
+                    sm: -4,
+                    md: 0,
+                    lg: 0,
+                    xl: 0,
+                  },
+                }}
+              >
+                Users Management
+              </Typography>
+              <Box
+                padding={1}
+                sx={{
+                  ml: {
+                    xs: -5,
+                    sm: -5,
+                    md: 0,
+                    lg: 0,
+                    xl: 0,
+                  },
+                }}
+              >
+                <Box
+                  pb={1}
+                  gap={1}
+                  display="flex"
+                  flexDirection="row"
+                  alignItems="center"
+                >
+                  <TextField
+                    label="Search by Username"
+                    variant="outlined"
+                    size="small"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    sx={{ maxWidth: 200 }} // Limit width of the text field
+                  />
+                  <Button
+                    size="small"
+                    variant="contained"
+                    color="primary"
+                    onClick={() => handleOpenDialog()}
+                  >
+                    Add New User
+                  </Button>
+                </Box>
+
+                <Paper sx={{ width: "100%", overflow: "hidden" }}>
+                  <TableContainer>
+                    <Table size="small">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell
+                            sx={{
+                              fontWeight: "bold",
+                              padding: "8px",
+                              maxWidth: "60px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            ID
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              fontWeight: "bold",
+                              padding: "8px",
+                              maxWidth: "120px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            Username
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              fontWeight: "bold",
+                              padding: "8px",
+                              maxWidth: "120px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            First Name
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              fontWeight: "bold",
+                              padding: "8px",
+                              maxWidth: "120px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            Last Name
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              fontWeight: "bold",
+                              padding: "8px",
+                              maxWidth: "100px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            Role
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              fontWeight: "bold",
+                              padding: "8px",
+                              maxWidth: "100px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            Actions
+                          </TableCell>
                         </TableRow>
-                      )}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-                <TablePagination
-                  rowsPerPageOptions={[5, 10, 25]}
-                  component="div"
-                  count={users.length}
-                  rowsPerPage={rowsPerPage}
-                  page={page}
-                  onPageChange={handleChangePage}
-                  onRowsPerPageChange={handleChangeRowsPerPage}
-                />
-              </Paper>
+                      </TableHead>
+                      <TableBody>
+                        {filteredUsers
+                          .slice(
+                            page * rowsPerPage,
+                            page * rowsPerPage + rowsPerPage
+                          )
+                          .map((user) => (
+                            <TableRow key={user.id}>
+                              <TableCell
+                                sx={{
+                                  padding: "8px",
+                                  maxWidth: "60px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {user.id}
+                              </TableCell>
+                              <TableCell
+                                sx={{
+                                  padding: "8px",
+                                  maxWidth: "120px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {user.username}
+                              </TableCell>
+                              <TableCell
+                                sx={{
+                                  padding: "8px",
+                                  maxWidth: "120px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {user.firstName}
+                              </TableCell>
+                              <TableCell
+                                sx={{
+                                  padding: "8px",
+                                  maxWidth: "120px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {user.lastName}
+                              </TableCell>
+                              <TableCell
+                                sx={{
+                                  padding: "8px",
+                                  maxWidth: "100px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {user.role}
+                              </TableCell>
+                              <TableCell
+                                sx={{
+                                  padding: "8px",
+                                  maxWidth: "100px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                <Button
+                                  size="small"
+                                  variant="outlined"
+                                  onClick={() => handleOpenDialog(user)}
+                                >
+                                  Edit
+                                </Button>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        {emptyRows > 0 && (
+                          <TableRow style={{ height: 53 * emptyRows }}>
+                            <TableCell colSpan={6} />
+                          </TableRow>
+                        )}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                  <TablePagination
+                    rowsPerPageOptions={[5, 10, 25]}
+                    component="div"
+                    count={users.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                    sx={{ padding: "8px" }} // Adjust pagination padding
+                  />
+                </Paper>
+
+                <Dialog open={openDialog} onClose={handleCloseDialog}>
+                  <DialogTitle>
+                    {editingUser ? "Edit User" : "Add New User"}
+                  </DialogTitle>
+                  <DialogContent>
+                    <TextField
+                      margin="dense"
+                      label="ID"
+                      type="text"
+                      fullWidth
+                      name="id"
+                      value={newUserData.id}
+                      onChange={handleInputChange}
+                      disabled={!!editingUser} // Disable the ID field when editing
+                      sx={{ marginBottom: "8px" }} // Reduce bottom margin
+                    />
+                    <TextField
+                      margin="dense"
+                      label="Username"
+                      type="text"
+                      fullWidth
+                      name="username"
+                      value={newUserData.username}
+                      onChange={handleInputChange}
+                      sx={{ marginBottom: "8px" }} // Reduce bottom margin
+                    />
+                    <TextField
+                      margin="dense"
+                      label="First Name"
+                      type="text"
+                      fullWidth
+                      name="firstName"
+                      value={newUserData.firstName}
+                      onChange={handleInputChange}
+                      sx={{ marginBottom: "8px" }} // Reduce bottom margin
+                    />
+                    <TextField
+                      margin="dense"
+                      label="Last Name"
+                      type="text"
+                      fullWidth
+                      name="lastName"
+                      value={newUserData.lastName}
+                      onChange={handleInputChange}
+                      sx={{ marginBottom: "8px" }} // Reduce bottom margin
+                    />
+                    <FormControl fullWidth margin="dense">
+                      <InputLabel>Role</InputLabel>
+                      <Select
+                        name="role"
+                        value={newUserData.role}
+                        onChange={handleInputChange}
+                        fullWidth
+                      >
+                        <MenuItem value="admin">Admin</MenuItem>
+                        <MenuItem value="user">User</MenuItem>
+                        <MenuItem value="guest">Guest</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleCloseDialog}>Cancel</Button>
+                    <Button onClick={handleSave} color="primary">
+                      {editingUser ? "Save Changes" : "Add User"}
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+              </Box>
             </Box>
-          </Box>
+          </Container>
         );
       case "Feedbacks":
         return <Typography>This is content for Feedbacks</Typography>;

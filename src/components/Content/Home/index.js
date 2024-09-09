@@ -3,7 +3,15 @@ import { useRouter } from "next/router";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Chip, Paper, Typography, Box, Container, Grid } from "@mui/material";
+import {
+  Chip,
+  Divider,
+  Paper,
+  Typography,
+  Box,
+  Container,
+  Grid,
+} from "@mui/material";
 import Image from "next/image";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -26,6 +34,9 @@ import "aos/dist/aos.css";
 import SensorOccupiedIcon from "@mui/icons-material/SensorOccupied";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import BoltIcon from "@mui/icons-material/Bolt";
+import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import TripOriginIcon from "@mui/icons-material/TripOrigin";
 
 // Import Swiper styles
 import "swiper/css";
@@ -163,7 +174,7 @@ function ResponsiveCarousel() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, EffectFade]}
-        className="mySwiper"
+        className=""
       >
         <SwiperSlide>
           <Box
@@ -216,7 +227,7 @@ function ResponsiveCarousel() {
                 justifyContent: "center",
               }}
             >
-              Maximize Accuracy
+              Pokemon Universe
             </Typography>
             <Typography
               variant="h6"
@@ -236,7 +247,7 @@ function ResponsiveCarousel() {
                 justifyContent: "center",
               }}
             >
-              Find your best high accuracy machines!
+              Dive in through the generations
             </Typography>
           </Box>
         </SwiperSlide>
@@ -290,7 +301,7 @@ function ResponsiveCarousel() {
                 justifyContent: "center",
               }}
             >
-              Modern Approach
+              Trading Card Game
             </Typography>
             <Typography
               variant="h6"
@@ -310,7 +321,7 @@ function ResponsiveCarousel() {
                 justifyContent: "center",
               }}
             >
-              Get closer to modern era of technologies
+              Best Trading Card Game Ever!
             </Typography>
           </Box>
         </SwiperSlide>
@@ -356,7 +367,7 @@ function ResponsiveCarousel() {
                   xl: "3.4285714285714284rem;",
                 },
                 marginTop: {
-                  xs: 30,
+                  xs: 25,
                   sm: 30,
                   md: 30,
                   lg: 30,
@@ -365,7 +376,7 @@ function ResponsiveCarousel() {
                 justifyContent: "center",
               }}
             >
-              One Other
+              Ninth Generation
             </Typography>
             <Typography
               variant="h6"
@@ -399,9 +410,160 @@ function ResponsiveCarousel() {
             paddingRight={5}
             paddingBottom={5}
           >
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={6}>
+                <Box
+                  component="img"
+                  sx={{
+                    ml: {
+                      xs: 4,
+                      sm: 4,
+                      md: 0,
+                      lg: 0,
+                      xl: 0,
+                    },
+                    mt: {
+                      xs: -15,
+                      sm: -15,
+                      md: 2,
+                      lg: 2,
+                      xl: 2,
+                    },
+                    width: {
+                      xs: 300,
+                      sm: 300,
+                      md: 600,
+                      lg: 600,
+                      xl: 600,
+                    },
+                    height: {
+                      xs: 600,
+                      sm: 600,
+                      md: 600,
+                      lg: 600,
+                      xl: 600,
+                    },
+                    objectFit: "contain",
+                    objectPosition: "center",
+                    top: 0,
+                    left: 0,
+                    zIndex: 1,
+                  }}
+                  src="/images/figures/fig06.png"
+                  alt="Description of your image"
+                  width={275}
+                  height={300}
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Card
+                  sx={{
+                    // width: "600px",
+                    // height: "400px",
+                    marginTop: "50px",
+                    borderRadius: "10px",
+                    boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center", // Center content horizontally
+                    ml: {
+                      xs: -4,
+                      sm: -4,
+                      md: -10,
+                      lg: -10,
+                      xl: -10,
+                    },
+                    mt: {
+                      xs: -35,
+                      sm: -35,
+                      md: 6,
+                      lg: 6,
+                      xl: 6,
+                    },
+                    width: {
+                      xs: 400,
+                      sm: 300,
+                      md: "600px",
+                      lg: "600px",
+                      xl: "600px",
+                    },
+                    height: {
+                      xs: 400,
+                      sm: 400,
+                      md: "400px",
+                      lg: "400px",
+                      xl: "400px",
+                    },
+                  }}
+                >
+                  <Box padding={5}>
+                    <Box>
+                      <Typography
+                        sx={{
+                          color: "#303030",
+                          fontSize: {
+                            xs: "32px",
+                            sm: "32px",
+                            md: "2.4285714285714284rem;",
+                            lg: "2.4285714285714284rem;",
+                            xl: "2.4285714285714284rem;",
+                          },
+                          marginLeft: {
+                            xs: 0,
+                            sm: 0,
+                            md: 0,
+                            lg: 0,
+                            xl: 0,
+                          },
+                        }}
+                        variant="h4"
+                        fontWeight="bold"
+                      >
+                        About Us
+                      </Typography>
+                      <Divider
+                        sx={{
+                          marginTop: 1,
+                          height: 3,
+                          backgroundImage: `linear-gradient(to right, #ffde00 10%, #3b4cca 10%)`,
+                        }}
+                      />
+                      <Typography
+                        sx={{
+                          color: "#303030",
+                          marginLeft: {
+                            xs: 0,
+                            sm: 0,
+                            md: 0,
+                            lg: 0,
+                            xl: 0,
+                          },
+                        }}
+                        variant="body1"
+                        marginTop={3}
+                        color="initial"
+                      >
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industrys
+                        standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it
+                        to make a type specimen book.
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Card>
+              </Grid>
+            </Grid>
+          </Box>
+        </div>
+      </Container>
+
+      <Box backgroundColor="#000000" pt={5} pb={3}>
+        <Container>
+          <Box pb={2}>
             <Typography
               sx={{
-                color: "#303030",
+                color: "white",
                 fontSize: {
                   xs: "32px",
                   sm: "32px",
@@ -410,8 +572,8 @@ function ResponsiveCarousel() {
                   xl: "2.4285714285714284rem;",
                 },
                 marginLeft: {
-                  xs: -3,
-                  sm: -3,
+                  xs: 0,
+                  sm: 0,
                   md: 0,
                   lg: 0,
                   xl: 0,
@@ -420,790 +582,877 @@ function ResponsiveCarousel() {
               variant="h4"
               fontWeight="bold"
             >
-              About Us
+              Various Pokemons
             </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
-                <Box>
-                  <Typography
+            <Divider
+              sx={{
+                marginTop: 1,
+                height: 3,
+                backgroundImage: `linear-gradient(to right, #ffde00 10%, #3b4cca 10%)`,
+              }}
+            />
+          </Box>
+          <Box padding="0px">
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={slidesPerView}
+              freeMode={true}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[FreeMode, Pagination]}
+              className="cardSwiper"
+            >
+              <SwiperSlide>
+                <div
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
+                  style={{ paddingBottom: "50px" }}
+                >
+                  <Card
                     sx={{
-                      color: "#303030",
-                      marginLeft: {
-                        xs: -3,
-                        sm: -3,
-                        md: 0,
-                        lg: 0,
-                        xl: 0,
+                      maxWidth: {
+                        xs: 280,
+                        sm: 280,
+                        md: 280,
+                        lg: 280,
+                        xl: 280,
                       },
+                      height: {
+                        xs: 360,
+                        sm: 360,
+                        md: 360,
+                        lg: 360,
+                        xl: 360,
+                      },
+                      position: "relative",
+                      background:
+                        "linear-gradient(45deg, #A85EA2 30%, #6B2492 90%)",
                     }}
-                    variant="body1"
-                    marginTop={5}
-                    color="initial"
                   >
-                    PT. Tamura Trade Indonesia have been a leading & trusted
-                    industrial supplier and general trading to Manufacturing
-                    Industries. We are confident to provide the best service to
-                    our customers by providing high quality products and
-                    dedicated services to customers. We have contributed a lot
-                    of cost reduction and quality improvement to our customers.
-                  </Typography>
+                    <Box
+                      paddingY={2}
+                      paddingX={0}
+                      sx={{ position: "relative", height: "100%" }}
+                    >
+                      <Box
+                        component="img"
+                        sx={{
+                          ml: -40,
+                          mt: -3,
+                          width: {
+                            xs: 800,
+                            sm: 800,
+                            md: 800,
+                            lg: 800,
+                            xl: 800,
+                          },
+                          height: {
+                            xs: 600,
+                            sm: 600,
+                            md: 600,
+                            lg: 600,
+                            xl: 600,
+                          },
+                          objectFit: "contain",
+                          objectPosition: "center",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          zIndex: 1,
+                        }}
+                        src="/images/figures/fig04.png"
+                        alt="Description of your image"
+                        width={275}
+                        height={300}
+                      />
+
+                      <Box
+                        sx={{
+                          position: "relative",
+                          zIndex: 2,
+                          mt: 30,
+                          paddingX: 0,
+                          textAlign: "left",
+                          backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                          backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                          boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                          width: "500px",
+                          justifyContent: "center",
+                          justifyItems: "center",
+                        }}
+                      >
+                        <Box px={1} pt={0.5} pb={2}>
+                          <Typography
+                            variant="body2"
+                            fontSize="14px"
+                            color="white"
+                          >
+                            Legendary
+                          </Typography>
+                          <Typography
+                            fontWeight="bold"
+                            gutterBottom
+                            color="white"
+                            sx={{
+                              textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                            }}
+                            marginTop={0}
+                            fontSize="26px"
+                            variant="h5"
+                            component="div"
+                          >
+                            Mewtwo
+                          </Typography>
+                          <Chip
+                            size="small"
+                            sx={{
+                              color: "white",
+                              backgroundColor: "#d66ab0",
+                              opacity: "80%",
+                              mt: -2,
+                            }}
+                            icon={
+                              <SensorOccupiedIcon
+                                style={{
+                                  color: "white",
+                                }}
+                              />
+                            }
+                            label="Psychic"
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Card>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
+                  style={{ paddingBottom: "50px" }}
+                >
+                  <Card
+                    sx={{
+                      maxWidth: {
+                        xs: 250,
+                        sm: 280,
+                        md: 280,
+                        lg: 280,
+                        xl: 280,
+                      },
+                      height: {
+                        xs: 360,
+                        sm: 360,
+                        md: 360,
+                        lg: 360,
+                        xl: 360,
+                      },
+                      position: "relative",
+                      background:
+                        "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
+                    }}
+                  >
+                    <Box
+                      paddingY={2}
+                      paddingX={0}
+                      sx={{ position: "relative", height: "100%" }}
+                    >
+                      <Box
+                        component="img"
+                        sx={{
+                          ml: -17,
+                          mt: -5,
+                          width: {
+                            xs: 800,
+                            sm: 800,
+                            md: 750,
+                            lg: 800,
+                            xl: 800,
+                          },
+                          height: {
+                            xs: 600,
+                            sm: 600,
+                            md: 600,
+                            lg: 600,
+                            xl: 600,
+                          },
+                          objectFit: "contain",
+                          objectPosition: "center",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          zIndex: 1,
+                        }}
+                        src="/images/figures/fig05.png"
+                        alt="Description of your image"
+                        width={275}
+                        height={300}
+                      />
+
+                      <Box
+                        sx={{
+                          position: "relative",
+                          zIndex: 2,
+                          mt: 30,
+                          paddingX: 0,
+                          textAlign: "left",
+                          backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                          backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                          boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                          width: "500px",
+                          justifyContent: "center",
+                          justifyItems: "center",
+                        }}
+                      >
+                        <Box px={1} pt={0.5} pb={2}>
+                          <Typography
+                            variant="body2"
+                            fontSize="14px"
+                            color="white"
+                          >
+                            Legendary
+                          </Typography>
+                          <Typography
+                            fontWeight="bold"
+                            gutterBottom
+                            color="white"
+                            sx={{
+                              textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                            }}
+                            marginTop={0}
+                            fontSize="26px"
+                            variant="h5"
+                            component="div"
+                          >
+                            Articuno
+                          </Typography>
+                          <Chip
+                            size="small"
+                            sx={{
+                              color: "black",
+                              backgroundColor: "#7ed8f2",
+                              opacity: "80%",
+                              mt: -2,
+                            }}
+                            icon={
+                              <AcUnitIcon
+                                style={{
+                                  color: "black",
+                                }}
+                              />
+                            }
+                            label="Ice"
+                          />
+                          <Chip
+                            size="small"
+                            sx={{
+                              color: "black",
+                              backgroundColor: "#aab8c2",
+                              opacity: "80%",
+                              mt: -2,
+                            }}
+                            icon={
+                              <FlightTakeoffIcon
+                                style={{
+                                  color: "black",
+                                }}
+                              />
+                            }
+                            label="Flying"
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Card>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div data-aos="zoom-in" data-aos-duration="500">
+                  <Card
+                    sx={{
+                      maxWidth: {
+                        xs: 250,
+                        sm: 280,
+                        md: 280,
+                        lg: 280,
+                        xl: 280,
+                      },
+                      height: {
+                        xs: 360,
+                        sm: 360,
+                        md: 360,
+                        lg: 360,
+                        xl: 360,
+                      },
+                      position: "relative",
+                      background:
+                        "linear-gradient(45deg, #B4B4BD 30%, #5A6273 90%)",
+                    }}
+                  >
+                    <Box
+                      paddingY={2}
+                      paddingX={0}
+                      sx={{ position: "relative", height: "100%" }}
+                    >
+                      <Box
+                        component="img"
+                        sx={{
+                          ml: -48,
+                          mt: 0,
+                          width: {
+                            xs: 750,
+                            sm: 750,
+                            md: 750,
+                            lg: 750,
+                            xl: 750,
+                          },
+                          height: {
+                            xs: 600,
+                            sm: 600,
+                            md: 600,
+                            lg: 600,
+                            xl: 600,
+                          },
+                          objectFit: "contain",
+                          objectPosition: "center",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          zIndex: 1,
+                        }}
+                        src="/images/figures/fig07.png"
+                        alt="Description of your image"
+                        width={275}
+                        height={300}
+                      />
+
+                      <Box
+                        sx={{
+                          position: "relative",
+                          zIndex: 2,
+                          mt: 30,
+                          paddingX: 0,
+                          textAlign: "left",
+                          backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                          backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                          boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                          width: "500px",
+                          justifyContent: "center",
+                          justifyItems: "center",
+                        }}
+                      >
+                        <Box px={1} pt={0.5} pb={2}>
+                          <Typography
+                            variant="body2"
+                            fontSize="14px"
+                            color="white"
+                          >
+                            Legendary
+                          </Typography>
+                          <Typography
+                            fontWeight="bold"
+                            gutterBottom
+                            color="white"
+                            sx={{
+                              textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                            }}
+                            marginTop={0}
+                            fontSize="26px"
+                            variant="h5"
+                            component="div"
+                          >
+                            Arceus
+                          </Typography>
+                          <Chip
+                            size="small"
+                            sx={{
+                              color: "black",
+                              backgroundColor: "#bfbfbf",
+                              opacity: "80%",
+                              mt: -2,
+                            }}
+                            icon={
+                              <TripOriginIcon
+                                style={{
+                                  color: "black",
+                                }}
+                              />
+                            }
+                            label="Normal"
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Card>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div data-aos="zoom-in" data-aos-duration="500">
+                  <Card
+                    sx={{
+                      maxWidth: {
+                        xs: 250,
+                        sm: 280,
+                        md: 280,
+                        lg: 280,
+                        xl: 280,
+                      },
+                      height: {
+                        xs: 360,
+                        sm: 360,
+                        md: 360,
+                        lg: 360,
+                        xl: 360,
+                      },
+                      position: "relative",
+                      background:
+                        "linear-gradient(45deg, #F6E652 30%, #F6BD20 90%)",
+                    }}
+                  >
+                    <Box
+                      paddingY={2}
+                      paddingX={0}
+                      sx={{ position: "relative", height: "100%" }}
+                    >
+                      <Box
+                        component="img"
+                        sx={{
+                          ml: -30,
+                          mt: -10,
+                          width: {
+                            xs: 600,
+                            sm: 600,
+                            md: 600,
+                            lg: 600,
+                            xl: 600,
+                          },
+                          height: {
+                            xs: 500,
+                            sm: 500,
+                            md: 500,
+                            lg: 500,
+                            xl: 500,
+                          },
+                          objectFit: "contain",
+                          objectPosition: "center",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          zIndex: 1,
+                        }}
+                        src="/images/figures/fig01.png"
+                        alt="Description of your image"
+                        width={275}
+                        height={300}
+                      />
+
+                      <Box
+                        sx={{
+                          position: "relative",
+                          zIndex: 2,
+                          mt: 30,
+                          paddingX: 0,
+                          textAlign: "left",
+                          backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                          backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                          boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                          width: "500px",
+                          justifyContent: "center",
+                          justifyItems: "center",
+                        }}
+                      >
+                        <Box px={1} pt={0.5} pb={2}>
+                          <Typography
+                            variant="body2"
+                            fontSize="14px"
+                            color="white"
+                          >
+                            Common
+                          </Typography>
+                          <Typography
+                            fontWeight="bold"
+                            gutterBottom
+                            color="white"
+                            sx={{
+                              textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                            }}
+                            marginTop={0}
+                            fontSize="26px"
+                            variant="h5"
+                            component="div"
+                          >
+                            Pikachu
+                          </Typography>
+                          <Chip
+                            size="small"
+                            sx={{
+                              color: "black",
+                              backgroundColor: "#f8e71c",
+                              opacity: "80%",
+                              mt: -2,
+                            }}
+                            icon={
+                              <BoltIcon
+                                style={{
+                                  color: "black",
+                                }}
+                              />
+                            }
+                            label="Electric"
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Card>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div data-aos="zoom-in" data-aos-duration="500">
+                  <Card
+                    sx={{
+                      maxWidth: {
+                        xs: 250,
+                        sm: 280,
+                        md: 280,
+                        lg: 280,
+                        xl: 280,
+                      },
+                      height: {
+                        xs: 360,
+                        sm: 360,
+                        md: 360,
+                        lg: 360,
+                        xl: 360,
+                      },
+                      position: "relative",
+                      background:
+                        "linear-gradient(45deg, #FFEEBD 30%, #E6A452 90%)",
+                    }}
+                  >
+                    <Box
+                      paddingY={2}
+                      paddingX={0}
+                      sx={{ position: "relative", height: "100%" }}
+                    >
+                      <Box
+                        component="img"
+                        sx={{
+                          ml: -6,
+                          mt: -4,
+                          width: {
+                            xs: 800,
+                            sm: 800,
+                            md: 450,
+                            lg: 800,
+                            xl: 800,
+                          },
+                          height: {
+                            xs: 600,
+                            sm: 600,
+                            md: 450,
+                            lg: 600,
+                            xl: 600,
+                          },
+                          objectFit: "contain",
+                          objectPosition: "center",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          zIndex: 1,
+                        }}
+                        src="/images/figures/fig03.png"
+                        alt="Description of your image"
+                        width={275}
+                        height={300}
+                      />
+
+                      <Box
+                        sx={{
+                          position: "relative",
+                          zIndex: 2,
+                          mt: 30,
+                          paddingX: 0,
+                          textAlign: "left",
+                          backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
+                          backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
+                          boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
+                          width: "500px",
+                          justifyContent: "center",
+                          justifyItems: "center",
+                        }}
+                      >
+                        <Box px={1} pt={0.5} pb={2}>
+                          <Typography
+                            variant="body2"
+                            fontSize="14px"
+                            color="white"
+                          >
+                            Common
+                          </Typography>
+                          <Typography
+                            fontWeight="bold"
+                            gutterBottom
+                            color="white"
+                            sx={{
+                              textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
+                            }}
+                            marginTop={0}
+                            fontSize="26px"
+                            variant="h5"
+                            component="div"
+                          >
+                            Psyduck
+                          </Typography>
+                          <Chip
+                            size="small"
+                            sx={{
+                              color: "black",
+                              backgroundColor: "#4a90e2",
+                              opacity: "80%",
+                              mt: -2,
+                            }}
+                            icon={
+                              <WaterDropIcon
+                                style={{
+                                  color: "black",
+                                }}
+                              />
+                            }
+                            label="Water"
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Card>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </Box>
+        </Container>
+      </Box>
+
+      <div data-aos="zoom-in-up" data-aos-duration="2000">
+        {" "}
+        <Box paddingLeft={5} paddingTop={5} paddingRight={5} paddingBottom={5}>
+          <Grid item xs={12} md={6}></Grid>
+
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
+              <Card
+                sx={{
+                  // width: "600px",
+                  // height: "400px",
+                  marginTop: "50px",
+                  borderRadius: "10px",
+                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center", // Center content horizontally
+                  ml: {
+                    xs: -2,
+                    sm: -2,
+                    md: 0,
+                    lg: 0,
+                    xl: 0,
+                  },
+                  mt: {
+                    xs: 0,
+                    sm: 0,
+                    md: 6,
+                    lg: 6,
+                    xl: 6,
+                  },
+                  width: {
+                    xs: 400,
+                    sm: 300,
+                    md: "600px",
+                    lg: "600px",
+                    xl: "600px",
+                  },
+                  height: {
+                    xs: 400,
+                    sm: 400,
+                    md: "400px",
+                    lg: "400px",
+                    xl: "400px",
+                  },
+                }}
+              >
+                <Box padding={5}>
+                  <Box>
+                    <Typography
+                      sx={{
+                        color: "#303030",
+                        fontSize: {
+                          xs: "32px",
+                          sm: "32px",
+                          md: "2.4285714285714284rem;",
+                          lg: "2.4285714285714284rem;",
+                          xl: "2.4285714285714284rem;",
+                        },
+                        marginLeft: {
+                          xs: 0,
+                          sm: 0,
+                          md: 0,
+                          lg: 0,
+                          xl: 0,
+                        },
+                      }}
+                      variant="h4"
+                      fontWeight="bold"
+                    >
+                      Feedbacks
+                    </Typography>
+                    <Divider
+                      sx={{
+                        marginTop: 1,
+                        height: 3,
+                        backgroundImage: `linear-gradient(to right, #ffde00 10%, #3b4cca 10%)`,
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        color: "#303030",
+                        marginLeft: {
+                          xs: 0,
+                          sm: 0,
+                          md: 0,
+                          lg: 0,
+                          xl: 0,
+                        },
+                      }}
+                      variant="body1"
+                      marginTop={3}
+                      color="initial"
+                    >
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industrys
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book.
+                    </Typography>
+                  </Box>
                 </Box>
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  marginTop: "50px",
+                  marginLeft: {
+                    xs: "0",
+                    sm: "0",
+                    md: "130px",
+                    lg: "130px",
+                    xl: "130px",
+                  },
+                }}
+              >
                 <Swiper
                   effect={"cards"}
                   grabCursor={true}
                   modules={[EffectCards]}
-                  className="mySwiper"
-                  style={{ paddingRight: "40px" }}
+                  style={{ width: 320 }}
+                  className="swiperSize"
                 >
                   <SwiperSlide
-                    style={{ backgroundColor: "rgba(255, 0, 0, 0.0)" }}
+                    className="swiperSlide"
+                    style={{
+                      boxShadow: "none",
+                      backgroundColor: "rgba(0, 0, 0, 0.0)",
+                    }}
                   >
                     <Image
-                      src="/images/home/home01.jpg"
+                      className=""
+                      src="/images/cards/rs_tcg01.png"
                       alt="Description of your image"
-                      width={500}
-                      height={300}
+                      width={300}
+                      height={400}
+                      objectFit="contain"
+                      objectPosition="center"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide
+                    style={{
+                      boxShadow: "none",
+                      backgroundColor: "rgba(0, 0, 0, 0.0)",
+                    }}
+                  >
+                    <Image
+                      className=""
+                      src="/images/cards/rs_tcg02.png"
+                      alt="Description of your image"
+                      width={300}
+                      height={400}
                       objectFit="contain"
                       objectPosition="center"
                     />
                   </SwiperSlide>
                   <SwiperSlide style={{ backgroundColor: "transparent" }}>
                     <Image
-                      src="/images/home/home02.jpg"
+                      className=""
+                      src="/images/cards/rs_tcg00.png"
                       alt="Description of your image"
-                      width={500}
-                      height={300}
+                      width={300}
+                      height={400}
                       objectFit="contain"
                       objectPosition="center"
                     />
                   </SwiperSlide>
                   <SwiperSlide style={{ backgroundColor: "transparent" }}>
                     <Image
-                      src="/images/home/home03.jpg"
+                      src="/images/cards/rs_tcg00.png"
                       alt="Description of your image"
-                      width={500}
-                      height={300}
+                      width={300}
+                      height={400}
+                      objectFit="contain"
+                      objectPosition="center"
+                    />{" "}
+                    <Image
+                      className=""
+                      src="/images/cards/tcg01.png"
+                      alt="Description of your image"
+                      width={300}
+                      height={400}
                       objectFit="contain"
                       objectPosition="center"
                     />
                   </SwiperSlide>
                 </Swiper>
-              </Grid>
+              </Box>
             </Grid>
-          </Box>
-        </div>
-
-        <Box padding="10px">
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={slidesPerView}
-            freeMode={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[FreeMode, Pagination]}
-            className="cardSwiper"
-          >
-            <SwiperSlide>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="500"
-                style={{ paddingBottom: "50px" }}
-              >
-                <Card
-                  sx={{
-                    maxWidth: {
-                      xs: 250,
-                      sm: 280,
-                      md: 280,
-                      lg: 280,
-                      xl: 280,
-                    },
-                    height: {
-                      xs: 360,
-                      sm: 360,
-                      md: 360,
-                      lg: 360,
-                      xl: 360,
-                    },
-                    position: "relative",
-                    background:
-                      "linear-gradient(45deg, #A85EA2 30%, #6B2492 90%)",
-                  }}
-                >
-                  <Box
-                    paddingY={2}
-                    paddingX={0}
-                    sx={{ position: "relative", height: "100%" }}
-                  >
-                    <Box
-                      component="img"
-                      sx={{
-                        ml: -40,
-                        mt: -3,
-                        width: {
-                          xs: 800,
-                          sm: 800,
-                          md: 800,
-                          lg: 800,
-                          xl: 800,
-                        },
-                        height: {
-                          xs: 600,
-                          sm: 600,
-                          md: 600,
-                          lg: 600,
-                          xl: 600,
-                        },
-                        objectFit: "contain",
-                        objectPosition: "center",
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: 1,
-                      }}
-                      src="/images/figures/fig04.png"
-                      alt="Description of your image"
-                      width={275}
-                      height={300}
-                    />
-
-                    <Box
-                      sx={{
-                        position: "relative",
-                        zIndex: 2,
-                        mt: 30,
-                        paddingX: 0,
-                        textAlign: "left",
-                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
-                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
-                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
-                        width: "500px",
-                        justifyContent: "center",
-                        justifyItems: "center",
-                      }}
-                    >
-                      <Box px={1} pt={0.5} pb={2}>
-                        <Typography
-                          variant="body2"
-                          fontSize="14px"
-                          color="white"
-                        >
-                          Legendary
-                        </Typography>
-                        <Typography
-                          fontWeight="bold"
-                          gutterBottom
-                          color="white"
-                          sx={{
-                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
-                          }}
-                          marginTop={0}
-                          fontSize="26px"
-                          variant="h5"
-                          component="div"
-                        >
-                          Mewtwo
-                        </Typography>
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "white",
-                            backgroundColor: "#d66ab0",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <SensorOccupiedIcon
-                              style={{
-                                color: "white",
-                              }}
-                            />
-                          }
-                          label="Psychic"
-                        />
-                      </Box>
-                    </Box>
-                  </Box>
-                </Card>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="500"
-                style={{ paddingBottom: "50px" }}
-              >
-                <Card
-                  sx={{
-                    maxWidth: {
-                      xs: 250,
-                      sm: 280,
-                      md: 280,
-                      lg: 280,
-                      xl: 280,
-                    },
-                    height: {
-                      xs: 360,
-                      sm: 360,
-                      md: 360,
-                      lg: 360,
-                      xl: 360,
-                    },
-                    position: "relative",
-                    background:
-                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
-                  }}
-                >
-                  <Box
-                    paddingY={2}
-                    paddingX={0}
-                    sx={{ position: "relative", height: "100%" }}
-                  >
-                    <Box
-                      component="img"
-                      sx={{
-                        ml: -17,
-                        mt: -5,
-                        width: {
-                          xs: 800,
-                          sm: 800,
-                          md: 750,
-                          lg: 800,
-                          xl: 800,
-                        },
-                        height: {
-                          xs: 600,
-                          sm: 600,
-                          md: 600,
-                          lg: 600,
-                          xl: 600,
-                        },
-                        objectFit: "contain",
-                        objectPosition: "center",
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: 1,
-                      }}
-                      src="/images/figures/fig05.png"
-                      alt="Description of your image"
-                      width={275}
-                      height={300}
-                    />
-
-                    <Box
-                      sx={{
-                        position: "relative",
-                        zIndex: 2,
-                        mt: 30,
-                        paddingX: 0,
-                        textAlign: "left",
-                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
-                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
-                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
-                        width: "500px",
-                        justifyContent: "center",
-                        justifyItems: "center",
-                      }}
-                    >
-                      <Box px={1} pt={0.5} pb={2}>
-                        <Typography
-                          variant="body2"
-                          fontSize="14px"
-                          color="white"
-                        >
-                          Legendary
-                        </Typography>
-                        <Typography
-                          fontWeight="bold"
-                          gutterBottom
-                          color="white"
-                          sx={{
-                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
-                          }}
-                          marginTop={0}
-                          fontSize="26px"
-                          variant="h5"
-                          component="div"
-                        >
-                          Articuno 5
-                        </Typography>
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#7ed8f2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <AcUnitIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Ice"
-                        />
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#aab8c2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <FlightTakeoffIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Flying"
-                        />
-                      </Box>
-                    </Box>
-                  </Box>
-                </Card>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div data-aos="zoom-in" data-aos-duration="500">
-                <Card
-                  sx={{
-                    maxWidth: {
-                      xs: 250,
-                      sm: 280,
-                      md: 280,
-                      lg: 280,
-                      xl: 280,
-                    },
-                    height: {
-                      xs: 360,
-                      sm: 360,
-                      md: 360,
-                      lg: 360,
-                      xl: 360,
-                    },
-                    position: "relative",
-                    background:
-                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
-                  }}
-                >
-                  <Box
-                    paddingY={2}
-                    paddingX={0}
-                    sx={{ position: "relative", height: "100%" }}
-                  >
-                    <Box
-                      component="img"
-                      sx={{
-                        ml: -17,
-                        mt: -5,
-                        width: {
-                          xs: 800,
-                          sm: 800,
-                          md: 750,
-                          lg: 800,
-                          xl: 800,
-                        },
-                        height: {
-                          xs: 600,
-                          sm: 600,
-                          md: 600,
-                          lg: 600,
-                          xl: 600,
-                        },
-                        objectFit: "contain",
-                        objectPosition: "center",
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: 1,
-                      }}
-                      src="/images/figures/fig05.png"
-                      alt="Description of your image"
-                      width={275}
-                      height={300}
-                    />
-
-                    <Box
-                      sx={{
-                        position: "relative",
-                        zIndex: 2,
-                        mt: 30,
-                        paddingX: 0,
-                        textAlign: "left",
-                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
-                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
-                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
-                        width: "500px",
-                        justifyContent: "center",
-                        justifyItems: "center",
-                      }}
-                    >
-                      <Box px={1} pt={0.5} pb={2}>
-                        <Typography
-                          variant="body2"
-                          fontSize="14px"
-                          color="white"
-                        >
-                          Legendary
-                        </Typography>
-                        <Typography
-                          fontWeight="bold"
-                          gutterBottom
-                          color="white"
-                          sx={{
-                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
-                          }}
-                          marginTop={0}
-                          fontSize="26px"
-                          variant="h5"
-                          component="div"
-                        >
-                          Articuno 2
-                        </Typography>
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#7ed8f2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <AcUnitIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Ice"
-                        />
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#aab8c2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <FlightTakeoffIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Flying"
-                        />
-                      </Box>
-                    </Box>
-                  </Box>
-                </Card>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div data-aos="zoom-in" data-aos-duration="500">
-                <Card
-                  sx={{
-                    maxWidth: {
-                      xs: 250,
-                      sm: 280,
-                      md: 280,
-                      lg: 280,
-                      xl: 280,
-                    },
-                    height: {
-                      xs: 360,
-                      sm: 360,
-                      md: 360,
-                      lg: 360,
-                      xl: 360,
-                    },
-                    position: "relative",
-                    background:
-                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
-                  }}
-                >
-                  <Box
-                    paddingY={2}
-                    paddingX={0}
-                    sx={{ position: "relative", height: "100%" }}
-                  >
-                    <Box
-                      component="img"
-                      sx={{
-                        ml: -17,
-                        mt: -5,
-                        width: {
-                          xs: 800,
-                          sm: 800,
-                          md: 750,
-                          lg: 800,
-                          xl: 800,
-                        },
-                        height: {
-                          xs: 600,
-                          sm: 600,
-                          md: 600,
-                          lg: 600,
-                          xl: 600,
-                        },
-                        objectFit: "contain",
-                        objectPosition: "center",
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: 1,
-                      }}
-                      src="/images/figures/fig05.png"
-                      alt="Description of your image"
-                      width={275}
-                      height={300}
-                    />
-
-                    <Box
-                      sx={{
-                        position: "relative",
-                        zIndex: 2,
-                        mt: 30,
-                        paddingX: 0,
-                        textAlign: "left",
-                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
-                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
-                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
-                        width: "500px",
-                        justifyContent: "center",
-                        justifyItems: "center",
-                      }}
-                    >
-                      <Box px={1} pt={0.5} pb={2}>
-                        <Typography
-                          variant="body2"
-                          fontSize="14px"
-                          color="white"
-                        >
-                          Legendary
-                        </Typography>
-                        <Typography
-                          fontWeight="bold"
-                          gutterBottom
-                          color="white"
-                          sx={{
-                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
-                          }}
-                          marginTop={0}
-                          fontSize="26px"
-                          variant="h5"
-                          component="div"
-                        >
-                          Articuno 3
-                        </Typography>
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#7ed8f2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <AcUnitIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Ice"
-                        />
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#aab8c2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <FlightTakeoffIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Flying"
-                        />
-                      </Box>
-                    </Box>
-                  </Box>
-                </Card>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div data-aos="zoom-in" data-aos-duration="500">
-                <Card
-                  sx={{
-                    maxWidth: {
-                      xs: 250,
-                      sm: 280,
-                      md: 280,
-                      lg: 280,
-                      xl: 280,
-                    },
-                    height: {
-                      xs: 360,
-                      sm: 360,
-                      md: 360,
-                      lg: 360,
-                      xl: 360,
-                    },
-                    position: "relative",
-                    background:
-                      "linear-gradient(45deg, #4A90E2 30%, #005AA7 90%)",
-                  }}
-                >
-                  <Box
-                    paddingY={2}
-                    paddingX={0}
-                    sx={{ position: "relative", height: "100%" }}
-                  >
-                    <Box
-                      component="img"
-                      sx={{
-                        ml: -17,
-                        mt: -5,
-                        width: {
-                          xs: 800,
-                          sm: 800,
-                          md: 750,
-                          lg: 800,
-                          xl: 800,
-                        },
-                        height: {
-                          xs: 600,
-                          sm: 600,
-                          md: 600,
-                          lg: 600,
-                          xl: 600,
-                        },
-                        objectFit: "contain",
-                        objectPosition: "center",
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: 1,
-                      }}
-                      src="/images/figures/fig05.png"
-                      alt="Description of your image"
-                      width={275}
-                      height={300}
-                    />
-
-                    <Box
-                      sx={{
-                        position: "relative",
-                        zIndex: 2,
-                        mt: 30,
-                        paddingX: 0,
-                        textAlign: "left",
-                        backdropFilter: "blur(0px)", // Optional: adds a blur effect to the background
-                        backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black background
-                        boxShadow: "0px -16px 16px rgba(0, 0, 0, 0.3)",
-                        width: "500px",
-                        justifyContent: "center",
-                        justifyItems: "center",
-                      }}
-                    >
-                      <Box px={1} pt={0.5} pb={2}>
-                        <Typography
-                          variant="body2"
-                          fontSize="14px"
-                          color="white"
-                        >
-                          Legendary
-                        </Typography>
-                        <Typography
-                          fontWeight="bold"
-                          gutterBottom
-                          color="white"
-                          sx={{
-                            textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6)", // Apply shadow here
-                          }}
-                          marginTop={0}
-                          fontSize="26px"
-                          variant="h5"
-                          component="div"
-                        >
-                          Articuno 4
-                        </Typography>
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#7ed8f2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <AcUnitIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Ice"
-                        />
-                        <Chip
-                          size="small"
-                          sx={{
-                            color: "black",
-                            backgroundColor: "#aab8c2",
-                            opacity: "80%",
-                            mt: -2,
-                          }}
-                          icon={
-                            <FlightTakeoffIcon
-                              style={{
-                                color: "black",
-                              }}
-                            />
-                          }
-                          label="Flying"
-                        />
-                      </Box>
-                    </Box>
-                  </Box>
-                </Card>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          </Grid>
         </Box>
-        <div data-aos="zoom-in-up" data-aos-duration="2000">
-          <Box
-            paddingLeft={5}
-            paddingRight={5}
-            paddingTop={5}
-            paddingBottom={5}
-          >
-            <Typography
-              sx={{ color: "#303030" }}
-              variant="h4"
-              fontWeight="bold"
-              color="initial"
-            >
-              Partnership
-            </Typography>
+      </div>
 
-            <Grid display="flex" container gap={2} justifyContent="center">
+      <div data-aos="zoom-in-up" data-aos-duration="2000">
+        <Box paddingLeft={5} paddingRight={5} paddingTop={5} paddingBottom={5}>
+          <Typography
+            sx={{
+              color: "#303030",
+              textAlign: "center",
+            }}
+            variant="h4"
+            fontWeight="bold"
+            color="initial"
+          >
+            Partnership
+          </Typography>
+
+          <Grid display="flex" container gap={2} justifyContent="center">
+            <Box
+              display="flex"
+              gap={2}
+              flexDirection="row"
+              flexWrap="wrap"
+              justifyContent="center"
+              justifyItems="center"
+            >
               <Card
                 sx={{
-                  width: "200px",
+                  width: "160px",
                   height: "100px",
                   marginTop: "20px",
                   borderRadius: "10px",
@@ -1211,42 +1460,13 @@ function ResponsiveCarousel() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center", // Center content horizontally
-                }}
-              >
-                <Box padding={5}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <motion.img
-                      className="box"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                      style={{ marginTop: "-30px" }}
-                      src="/logo/tamura02.png"
-                      alt="Description of your image"
-                      width={140}
-                      objectFit="cover"
-                      objectPosition="center center"
-                    />
-                  </Box>
-                </Box>
-              </Card>
-              <Card
-                sx={{
-                  width: "200px",
-                  height: "100px",
-                  marginTop: "20px",
-                  borderRadius: "10px",
-                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center", // Center content horizontally
+                  width: {
+                    xs: "150px",
+                    sm: "150px",
+                    md: "160px",
+                    lg: "160px",
+                    xl: "160px",
+                  },
                 }}
               >
                 <Box padding={5}>
@@ -1264,7 +1484,54 @@ function ResponsiveCarousel() {
                         damping: 10,
                       }}
                       style={{ marginTop: "-20px" }}
-                      src="images/about/kohyoung_logo01.png"
+                      src="/logo/poke01.png"
+                      alt="Description of your image"
+                      width={140}
+                      objectFit="cover"
+                      objectPosition="center center"
+                    />
+                  </Box>
+                </Box>
+              </Card>
+              <Card
+                sx={{
+                  width: "160px",
+                  height: "100px",
+                  marginTop: "20px",
+                  borderRadius: "10px",
+                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
+                  display: "flex",
+                  flexDirection: "column",
+                  flexWrap: "wrap",
+                  alignItems: "center", // Center content horizontally
+                  width: {
+                    xs: "150px",
+                    sm: "150px",
+                    md: "160px",
+                    lg: "160px",
+                    xl: "160px",
+                  },
+                }}
+              >
+                <Box padding={5}>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <motion.img
+                      className="box"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
+                      style={{
+                        marginTop: "-30px",
+                        marginLeft: "-25px",
+                      }}
+                      src="/logo/poke02.png"
                       alt="Description of your image"
                       width={130}
                       objectFit="cover"
@@ -1275,7 +1542,7 @@ function ResponsiveCarousel() {
               </Card>
               <Card
                 sx={{
-                  width: "200px",
+                  width: "160px",
                   height: "100px",
                   marginTop: "20px",
                   borderRadius: "10px",
@@ -1283,150 +1550,13 @@ function ResponsiveCarousel() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center", // Center content horizontally
-                }}
-              >
-                <Box padding={5}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <motion.img
-                      className="box"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                      style={{ marginTop: "-10px" }}
-                      src="images/about/anda-logo.png"
-                      alt="Description of your image"
-                      width={120}
-                      objectFit="cover"
-                      objectPosition="center center"
-                    />
-                  </Box>
-                </Box>
-              </Card>
-              <Card
-                sx={{
-                  width: "200px",
-                  height: "100px",
-                  marginTop: "20px",
-                  borderRadius: "10px",
-                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center", // Center content horizontally
-                }}
-              >
-                <Box padding={5}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <motion.img
-                      className="box"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                      style={{ marginTop: "0px" }}
-                      src="images/about/mk-logo.png"
-                      alt="Description of your image"
-                      width={140}
-                      objectFit="cover"
-                      objectPosition="center center"
-                    />
-                  </Box>
-                </Box>
-              </Card>
-              <Card
-                sx={{
-                  width: "200px",
-                  height: "100px",
-                  marginTop: "20px",
-                  borderRadius: "10px",
-                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center", // Center content horizontally
-                }}
-              >
-                <Box padding={5}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <motion.img
-                      className="box"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                      style={{ marginTop: "-20px" }}
-                      src="images/about/mpi_logo.png"
-                      alt="Description of your image"
-                      width={100}
-                      objectFit="cover"
-                      objectPosition="center center"
-                    />
-                  </Box>
-                </Box>
-              </Card>
-              <Card
-                sx={{
-                  width: "200px",
-                  height: "100px",
-                  marginTop: "20px",
-                  borderRadius: "10px",
-                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center", // Center content horizontally
-                }}
-              >
-                <Box padding={5}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <motion.img
-                      className="box"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                      style={{ marginTop: "-10px" }}
-                      src="images/about/jt-logo.png"
-                      alt="Description of your image"
-                      width={140}
-                      objectFit="cover"
-                      objectPosition="center center"
-                    />
-                  </Box>
-                </Box>
-              </Card>
-              <Card
-                sx={{
-                  width: "200px",
-                  height: "100px",
-                  marginTop: "20px",
-                  borderRadius: "10px",
-                  boxShadow: "8px 8px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center", // Center content horizontally
+                  width: {
+                    xs: "150px",
+                    sm: "150px",
+                    md: "160px",
+                    lg: "160px",
+                    xl: "160px",
+                  },
                 }}
               >
                 <Box padding={5}>
@@ -1444,9 +1574,9 @@ function ResponsiveCarousel() {
                         damping: 10,
                       }}
                       style={{ marginTop: "-25px" }}
-                      src="images/about/pa-logo.png"
+                      src="/logo/poke03.png"
                       alt="Description of your image"
-                      width={100}
+                      width={120}
                       objectFit="cover"
                       objectPosition="center center"
                     />
@@ -1455,7 +1585,7 @@ function ResponsiveCarousel() {
               </Card>
               <Card
                 sx={{
-                  width: "200px",
+                  width: "160px",
                   height: "100px",
                   marginTop: "20px",
                   borderRadius: "10px",
@@ -1463,6 +1593,13 @@ function ResponsiveCarousel() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center", // Center content horizontally
+                  width: {
+                    xs: "150px",
+                    sm: "150px",
+                    md: "160px",
+                    lg: "160px",
+                    xl: "160px",
+                  },
                 }}
               >
                 <Box padding={5}>
@@ -1479,8 +1616,8 @@ function ResponsiveCarousel() {
                         stiffness: 400,
                         damping: 10,
                       }}
-                      style={{ marginTop: "-10px" }}
-                      src="images/about/pti-logo.png"
+                      style={{ marginTop: "-25px" }}
+                      src="/logo/poke04.png"
                       alt="Description of your image"
                       width={140}
                       objectFit="cover"
@@ -1491,7 +1628,7 @@ function ResponsiveCarousel() {
               </Card>
               <Card
                 sx={{
-                  width: "200px",
+                  width: "160px",
                   height: "100px",
                   marginTop: "20px",
                   borderRadius: "10px",
@@ -1499,6 +1636,13 @@ function ResponsiveCarousel() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center", // Center content horizontally
+                  width: {
+                    xs: "150px",
+                    sm: "150px",
+                    md: "160px",
+                    lg: "160px",
+                    xl: "160px",
+                  },
                 }}
               >
                 <Box padding={5}>
@@ -1515,10 +1659,10 @@ function ResponsiveCarousel() {
                         stiffness: 400,
                         damping: 10,
                       }}
-                      style={{ marginTop: "-10px" }}
-                      src="images/about/sinhovo-logo.png"
+                      style={{ marginTop: "-25px" }}
+                      src="/logo/poke05.png"
                       alt="Description of your image"
-                      width={140}
+                      width={150}
                       objectFit="cover"
                       objectPosition="center center"
                     />
@@ -1527,7 +1671,7 @@ function ResponsiveCarousel() {
               </Card>
               <Card
                 sx={{
-                  width: "200px",
+                  width: "160px",
                   height: "100px",
                   marginTop: "20px",
                   borderRadius: "10px",
@@ -1535,6 +1679,13 @@ function ResponsiveCarousel() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center", // Center content horizontally
+                  width: {
+                    xs: "150px",
+                    sm: "150px",
+                    md: "160px",
+                    lg: "160px",
+                    xl: "160px",
+                  },
                 }}
               >
                 <Box padding={5}>
@@ -1551,20 +1702,20 @@ function ResponsiveCarousel() {
                         stiffness: 400,
                         damping: 10,
                       }}
-                      style={{ marginTop: "-30px" }}
-                      src="images/about/KIC-logo.png"
+                      style={{ marginTop: "-25px" }}
+                      src="/logo/poke06.png"
                       alt="Description of your image"
-                      width={80}
+                      width={140}
                       objectFit="cover"
                       objectPosition="center center"
                     />
                   </Box>
                 </Box>
               </Card>
-            </Grid>
-          </Box>
-        </div>
-      </Container>
+            </Box>
+          </Grid>
+        </Box>
+      </div>
     </Grid>
   );
 }

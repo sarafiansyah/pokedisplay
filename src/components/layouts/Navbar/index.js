@@ -32,7 +32,7 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import LibraryAddCheckIcon from "@mui/icons-material/LibraryAddCheck";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 
-const pages = ["Pokemons", "Generations", "Items", "About", "Users"];
+const pages = ["Pokemons", "Generations", "Items", "About"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -412,17 +412,7 @@ function ResponsiveAppBar() {
                   Items
                 </MenuItem>
               </Link>
-              <Link style={{ textDecoration: "none" }} href={`/types`} passHref>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <LibraryAddCheckIcon sx={{ marginRight: 1 }} />
-                  Types
-                </MenuItem>
-              </Link>
-              <Link
-                style={{ textDecoration: "none" }}
-                href={`/contact`}
-                passHref
-              >
+              <Link style={{ textDecoration: "none" }} href={`/about`} passHref>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <LibraryAddCheckIcon sx={{ marginRight: 1 }} />
                   About
@@ -459,7 +449,7 @@ function ResponsiveAppBar() {
                 sx={{
                   marginTop: 1,
                   height: 3,
-                  backgroundImage: `linear-gradient(to right, #e82c35 10%, #0c248c 10%)`,
+                  backgroundImage: `linear-gradient(to right, #ffde00 10%, #3b4cca 10%)`,
                 }}
               />
             </Menu>

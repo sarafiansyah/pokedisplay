@@ -109,7 +109,7 @@ export default function App() {
               gutterBottom
               textAlign="left"
             >
-              Products
+              Pokemons
             </Typography>
 
             <Link
@@ -118,7 +118,7 @@ export default function App() {
               color="inherit"
               key="angular-link"
             >
-              Tamura
+              Pikachu
             </Link>
 
             <Link
@@ -127,7 +127,7 @@ export default function App() {
               color="inherit"
               key="react-link"
             >
-              Kohyoung
+              Mewtwo
             </Link>
 
             <Link
@@ -136,7 +136,7 @@ export default function App() {
               color="inherit"
               key="vue-link"
             >
-              Jinno
+              Bulbasaur
             </Link>
 
             <Link
@@ -145,7 +145,7 @@ export default function App() {
               color="inherit"
               key="laravel-link"
             >
-              JVC
+              Voltorb
             </Link>
           </Grid>
 
@@ -222,25 +222,25 @@ export default function App() {
 
             <Box display="flex" alignItems="center">
               <Typography component="span" variant="inherit" color="inherit">
-                Cengkareng,Jakarta Barat 11830
+                Jakarta, Indonesia
               </Typography>
             </Box>
 
             <Box display="flex" alignItems="center">
               <Typography component="span" variant="inherit" color="inherit">
-                tamura@dnet.net.id
+                developer@pokedisplay.co.id
               </Typography>
             </Box>
 
             <Box display="flex" alignItems="center">
               <Typography component="span" variant="inherit" color="inherit">
-                +622170616828
+                +6212312312344
               </Typography>
             </Box>
 
             <Box display="flex" alignItems="center">
               <Typography component="span" variant="inherit" color="inherit">
-                +622170616898
+                +6212312312344
               </Typography>
             </Box>
           </Grid>
@@ -249,7 +249,7 @@ export default function App() {
 
       <Box p={3} display="flex">
         <Typography variant="body1" color="grey">
-          © 2024 Tamura Electronics (M) Sdn. Bhd.
+          © 2024 PokeDisplay - Nextjs Web By Mahesa Rafian Syah.
         </Typography>
       </Box>
     </Box>
