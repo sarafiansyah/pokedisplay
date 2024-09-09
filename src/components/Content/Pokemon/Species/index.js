@@ -38,11 +38,6 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 import Link from "next/link";
 
-import Tab01 from "@/components/Content/Products/_home/tab01.js";
-import Tab02 from "@/components/Content/Products/_home/tab02.js";
-import Tab03 from "@/components/Content/Products/_home/tab03.js";
-import Tab04 from "@/components/Content/Products/_home/tab04.js";
-import Tab05 from "@/components/Content/Products/_home/tab05.js";
 const ITEMS_PER_PAGE = 18;
 
 // Custom Card component
