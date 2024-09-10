@@ -16,6 +16,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Swal from "sweetalert2";
 import {
   Typography,
   Box,
@@ -264,7 +265,7 @@ export default function MiniDrawer() {
           <Container>
             <Box>
               <Box display="flex">
-                <Box sx={{ mt: 0 }}>
+                <Box>
                   <Typography variant="h4" color="initial">
                     Welcome, {userName}
                   </Typography>
@@ -329,7 +330,7 @@ export default function MiniDrawer() {
                     color="primary"
                     onClick={() => handleOpenDialog()}
                   >
-                    Add New User
+                    Add User
                   </Button>
                 </Box>
 
@@ -486,7 +487,8 @@ export default function MiniDrawer() {
                               >
                                 <Button
                                   size="small"
-                                  variant="outlined"
+                                  variant="contained"
+                                  color="warning"
                                   onClick={() => handleOpenDialog(user)}
                                 >
                                   Edit
@@ -575,8 +577,18 @@ export default function MiniDrawer() {
                     </FormControl>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={handleCloseDialog}>Cancel</Button>
-                    <Button onClick={handleSave} color="primary">
+                    <Button
+                      variant="contained"
+                      color="error"
+                      onClick={handleCloseDialog}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="success"
+                      onClick={handleSave}
+                    >
                       {editingUser ? "Save Changes" : "Add User"}
                     </Button>
                   </DialogActions>
@@ -590,21 +602,7 @@ export default function MiniDrawer() {
       case "Summary":
         return <Typography>This is content for Summary</Typography>;
       case "Version":
-        return (
-          <Box>
-            <Typography variant="h5" fontWeight="bold"></Typography>
-            <Box sx={{ mt: 0, ml: 0 }}>
-              <Image
-                src="/logo/logo01.png"
-                alt="Logo"
-                width={370}
-                height={100}
-                objectFit="cover"
-                style={{ cursor: "pointer", marginTop: "3px" }}
-              />
-            </Box>
-          </Box>
-        );
+        return <Typography>This is content for Version</Typography>;
       default:
         return <Typography>Select a menu item</Typography>;
     }
